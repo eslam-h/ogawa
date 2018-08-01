@@ -1,0 +1,87 @@
+.deals .product-filter{
+	background:transparent;
+	color:$text-color;
+}
+.productdeals {
+	.carousel-inner{
+		&:hover {
+		    overflow: inherit !important;
+		}
+	}
+	.product-grid .products-row{
+		.product-block .action > div{
+			padding-right:1px;
+		}
+		.item-countdown {
+			ul {
+				text-align: center; 
+			}
+		}
+	}
+	&.product-list{
+		.footer-deals{
+			margin-bottom: 0 !important;
+		}
+	}
+	.product-block{
+		.action{
+			margin: 0;
+		}
+	}
+	
+	.item-countdown {
+		ul {
+			margin: 0 auto;
+		    width: 100%;
+		    background: #ef9a9a;
+		    text-align: center;
+		}
+		li {
+		    margin: 0;
+		    padding: 10px 0;
+		    position: relative;
+		    width: 40px;
+		    display: inline-block;
+		    font-weight: 900;
+		    cursor: pointer;			
+			span{
+				display: none;
+			    font-size: 12px;
+			    position: absolute;
+			    text-transform: uppercase;
+			    color: #fff;
+			}
+			&:hover{
+				span{
+					display: block;	
+					bottom:27px;				
+				}
+			}
+			.countdown_num {				
+				span{
+					display: inline-block;
+					position:inherit;
+					font-size: $font-size-base + 4;
+					color: $white;
+				}
+			   &:before{
+	                position: absolute;
+	                @include rtl-left(0);
+	                font-size: $font-size-base + 4;
+	                top:10px;
+	                content: ":";
+	                color: $white;
+	                font-weight: 200;
+	            }
+			}
+			&:first-child{
+	            .countdown_num{
+	                &:before{
+	                    content: none;
+	                }
+	            }
+	        }
+		}
+	}
+	
+}

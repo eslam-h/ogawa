@@ -1,0 +1,83 @@
+.page-pavblog{
+	h1{
+		margin: 0;
+	}
+}
+.comment-warning{
+	color: #c12e2a;
+}
+.pav-blogs{
+	.blog-date{
+		background: $black;
+		color: $white;
+		display: block;
+		@include rtl-float-left();
+		font-size: $font-size-base + 4;
+		height: 70px;
+		line-height: normal;
+		@include rtl-margin-right(20px);
+		overflow: hidden;
+		padding: 12px;
+		.day {
+			padding: 0;
+			display: block;
+			text-align: center;
+		}
+	}	
+	.blog-body{
+		overflow: hidden;
+		.text-link{
+			color: $black;
+			font-weight: 600;
+			.fa{
+				@include rtl-padding-left(5px);
+			}
+			&:hover,&:active,&:focus{
+				color: $link-hover-color;
+			}
+		}
+	}
+	.blog-title{
+		a{
+			color: $black;
+		}
+	}
+	.blog-meta{
+	  ul{
+		margin: 0;
+		  	li {
+		  		font-size: 12px;
+			  display: inline-block;
+			  @include rtl-padding-right(20px);
+			  position: relative;
+			  b{
+			  	color: $black;
+			  	font-weight: normal;
+			  }
+			  &:first-child{
+			  	width: 100%;
+			  }
+			  &:last-child{
+			  	@include rtl-border-right(none);
+			  }
+			}
+		}
+	}	 
+}
+.blog-info{
+	margin-top: -100px;
+    padding: 20px;
+    position: relative;
+    width: 100%;
+	.blog-detail{
+		background: $white;
+	    overflow: hidden;
+	    @include rtl-padding(0, 30px, 30px, 30px);
+	    color: $gray-dark;
+	    .heading{
+	    	font-size: 30px;
+	    	font-weight: normal;
+	    	letter-spacing: -1px;
+	    }
+	}
+}

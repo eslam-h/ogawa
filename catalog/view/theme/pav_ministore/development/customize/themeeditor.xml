@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<themeeditor>
+	<version value="1.4">
+	<ccc available="true" />
+	<guest_checkout available="true" />
+	<one_page_checkout available="true" />
+	<store_locator available="true" />
+	</version>
+	<author>pavothemes</author>
+<name>Live Theme Editor</name>	
+<selectors>
+	<items>
+		<header>Body Content</header>
+		<match>body</match>		
+		<item>
+			<type>text</type>
+			<label>Background Color</label>
+			<selector>body,body .home1</selector>
+			<attrs>background-color</attrs>
+		</item>
+		<item>
+			<type>image</type>
+			<label>Background Image</label>
+			<selector>body,body .home1</selector>
+			<attrs>background-image</attrs>
+		</item> 		
+
+	 	<item>
+			<type>fontsize</type>
+			<label>Font-Size</label>
+			<selector>body,body .home1</selector>
+			<attrs>font-size</attrs>
+		</item> 
+		
+		<item>
+			<type>fontfamily</type>
+			<label>Font-Family</label>
+			<selector>body,body .home1</selector>
+			<attrs>font-family</attrs>
+		</item> 
+
+	</items>
+
+	<items>
+		<header>Header</header>
+		<match>header</match>	
+
+		<item>
+			<type>text</type>
+			<label>Background Color</label>
+			<selector>.bo-mainmenu</selector>
+			<attrs>background-color</attrs>
+		</item>
+		<item>
+			<type>image</type>
+			<label>Background Image</label>
+			<selector>.bo-mainmenu</selector>
+			<attrs>background-image</attrs>
+		</item>
+
+		<item>
+			<type>text</type>
+			<label>Color link menu</label>
+			<selector>.pav-megamenu .navbar-nav li a</selector>
+			<attrs>color</attrs>
+		</item>
+
+		<item>
+			<type>text</type>
+			<label>Background sub menu</label>
+			<selector>.bo-mainmenu .dropdown-menu</selector>
+			<attrs>background-color</attrs>
+		</item>
+		<item>
+			<type>image</type>
+			<label>Background sub Image</label>
+			<selector>#bo-mainmenu .dropdown-menu</selector>
+			<attrs>background-image</attrs>
+		</item>
+		<item>
+			<type>text</type>
+			<label>Color sub menu</label>
+			<selector>.bo-mainmenu .widget-heading, #bo-mainmenu .dropdown-menu</selector>
+			<attrs>color</attrs>
+		</item>  
+		<item>
+			<type>text</type>
+			<label>Color link sub menu</label>
+			<selector>.bo-mainmenu .dropdown-menu a,.bo-mainmenu .dropdown-menu li a</selector>
+			<attrs>color</attrs>
+		</item>
+	</items>
+
+	<items>
+		<header>Footer center</header>
+		<match>footer-center</match>	
+		<item>
+			<type>text</type>
+			<label>Background </label>
+			<selector>#footer .footer-center</selector>
+			<attrs>background-color</attrs>
+		</item> 
+		<item>
+			<type>image</type>
+			<label>Background Image</label>
+			<selector>#footer .footer-center</selector>
+			<attrs>background-image</attrs>
+		</item>	
+		
+		<item>
+			<type>text</type>
+			<label>Color</label>
+			<selector>#footer .footer-center .panel-title,#footer .footer-center .container,#footer .newsletter-v1 .description, footer#footer p, footer#footer p.phone</selector>
+			<attrs>color</attrs>
+		</item>
+
+		<item>
+			<type>text</type>
+			<label>Link color</label>
+			<selector>#footer .footer-center ul li a, #footer .footer-center ol li a</selector>
+			<attrs>color</attrs>
+		</item>
+	</items>
+
+	<items>
+		<header>Copyright</header>
+		<match>copyright</match>	
+		<item>
+			<type>text</type>
+			<label>Background </label>
+			<selector>.copyright</selector>
+			<attrs>background-color</attrs>
+		</item> 
+		<item>
+			<type>image</type>
+			<label>Background Image</label>
+			<selector>.copyright</selector>
+			<attrs>background-image</attrs>
+		</item>
+		<item>
+			<type>text</type>
+			<label>Text color</label>
+			<selector>.copyright .inner .copy</selector>
+			<attrs>color</attrs>
+		</item>
+
+		<item>
+			<type>text</type>
+			<label>Link color</label>
+			<selector>.copyright .inner a,.copyright a</selector>
+			<attrs>color</attrs>
+		</item>
+	</items>
+
+</selectors>
+
+<elements>
+	<items>
+		<header>Products</header>
+		<match>product</match>
+		<item>
+			<type>text</type>
+			<label>Product Name</label>
+			<selector>.product-block .name a</selector>
+			<attrs>color</attrs>
+		</item> 
+
+		<item>
+			<type>text</type>
+			<label>Color Price New</label>
+			<selector>.name-price .price .price-new</selector>
+			<attrs>color</attrs>
+		</item>  		
+ 		<item>
+			<type>text</type>
+			<label>Color Price Old</label>
+			<selector>.price .price-old</selector>
+			<attrs>color</attrs>
+		</item> 
+
+		<item>
+			<type>text</type>
+			<label>Background Sale</label>
+			<selector>.product-label.bts</selector>
+			<attrs>background-color</attrs>
+		</item>
+		<item>
+			<type>text</type>
+			<label>Color Sale</label>
+			<selector>.product-label</selector>
+			<attrs>color</attrs>
+		</item>
+		<item>
+			<type>text</type>
+			<label>Border icon</label>
+			<selector>.btn-outline-light</selector>
+			<attrs>border-color</attrs>
+		</item>
+		<item>
+			<type>text</type>
+			<label>bg icon</label>
+			<selector>.btn-outline-light</selector>
+			<attrs>background-color</attrs>
+		</item>
+		<item>
+			<type>text</type>
+			<label>Color icon</label>
+			<selector>.btn-outline-light</selector>
+			<attrs>color</attrs>
+		</item>
+
+
+		
+	</items>
+
+</elements>
+</themeeditor>

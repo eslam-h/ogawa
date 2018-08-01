@@ -1,0 +1,89 @@
+// auto search
+.search-auto{
+    padding-top:15px;
+}
+.rtl .header-v3{
+    .autosearch-wrapper{
+        .dropdown-menu{
+            right: 168px;
+            left: auto
+        }
+    }
+}
+.autosearch-wrapper {
+    .input-group-btn {
+        position: relative;
+        &:after {
+            background: $border-color;
+            line-height: 40px;
+            position: absolute;
+            @include rtl-right(0);
+            text-align: center;
+            top: 0;
+            font-family: 'FontAwesome';
+            content: "\f107";
+            font-size:$font-size-base + 2;
+            @include size(35px,40px);
+            color: #343434;
+
+        }       
+    }
+    .category_filter{
+        border:none;
+        display: inline-block;
+        font-size:$font-size-base - 1;
+        color: $gray-dark;
+        height: 40px;
+        line-height: 30px;
+        @include box-shadow(inherit);
+        background-color:$border-color;
+        @include rtl-padding-left(10px);
+        text-transform: capitalize;
+        @media(max-width: $screen-xs) {
+            max-width: 130px;
+        }
+    }
+    .search_query{
+        background-color: transparent;
+        height: 40px;
+        &:focus {
+            @include box-shadow(inherit);
+        }
+    }
+    .input-group {
+        width: 100%;
+        @include rtl-padding-right(35px);
+    }
+    .button-search {
+        position: absolute;
+        @include rtl-right(0);
+        line-height: 40px;
+        top: 0;
+        z-index: 10;
+        border: 0;
+        @include size(40px,40px);
+        color: $white;
+        padding:0;
+        font-size: $font-size-base + 4;
+        background-color:$search-button-bg;
+    }
+    .dropdown-menu {
+        z-index: 999;
+        padding:20px;
+        > li {
+            &.clearfix {
+                border-bottom: 1px dashed $border-color;
+                margin-right: 10px;
+            }
+            &:last-child {
+                border-bottom: none;
+            }
+            > a {
+                padding: 0;
+            }
+            .media-body{
+                @include rtl-padding-left(10px);
+            }
+        }
+    }
+}

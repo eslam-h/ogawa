@@ -1,0 +1,229 @@
+   
+.heading-vetical{
+    .panel-heading{
+        padding:20px 25px;
+    }
+}
+.arrow{
+    @include size(20px,20px);
+    line-height:20px !important;
+    color:#343434;
+    font-size:$font-size-base + 3;
+    text-align: center;
+    background:$white;
+    @include rounded-corners(100%);
+}
+.pav-verticalmenu{
+    @include rtl-left(0);
+    position: absolute;
+    width: 100%;
+    .vertical-icon{
+        @include size(50px,40px);
+        background:$theme-color;
+        color: $white;
+        text-align: center;
+        line-height: 40px;
+        font-size: 18px;
+        cursor: pointer;  
+    }
+    .navbar-default{
+        background:$white;
+        border:none;
+        margin: 0;
+        top:120%;
+        @include opacity(0);  
+        @include transition(all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s);
+        display: block;
+        position:absolute;
+        visibility: hidden;
+        z-index: 999;
+    }
+    &:hover,
+    &:focus {
+        .navbar-default {
+            @include opacity(1);
+            visibility: visible;
+            display: block;
+            top:100%;
+        }
+    }
+}
+.verticalmenu {
+    .navbar-collapse{
+        margin:0;
+        padding:20px 0;
+        border: 1px solid $theme-color;
+    }
+    .widget-heading {
+        /* text-transform: uppercase;
+        border-bottom:1px solid $border-color;
+        padding-bottom:20px; */
+    }
+    .navbar-nav {
+        position:static;
+        @include clearfloat;
+        padding:0;
+        > li {
+            @include size(100%,auto);
+            position: static;
+            @include rtl-float-left;
+            padding: 0 30px;
+            &:last-child{
+                a{
+                   border-bottom:none; 
+                }
+            }
+            > a {
+                display: block;
+                color: $theme-color;
+                text-transform: uppercase;
+                font-weight: 900;
+                padding: $vertical-menu-link-padding;
+                font-size: $font-size-base;
+                background:transparent !important;
+                position:relative;
+                border-bottom:1px solid $border-color;
+                &:hover,&:focus,&:active{
+                    color: #0a2432;
+                }
+                .menu-icon{
+                    display: block;
+                }
+                .fa {
+                    @include rtl-margin-right(5px);
+                    width: 20px;
+                }
+
+                .caret {
+                    @include rtl-float-right();
+                    @include rotate(-90deg);
+                    margin-top: 8px;
+
+                    .rtl & {
+                        @include rotate(90deg);
+                    }
+                }
+            }
+            // Hover li
+
+            &.topdropdow:hover {
+                position: static;
+            }
+
+            &:hover {
+                background:$white;
+                @include transition(all 300ms ease-in-out 0s);
+                > .dropdown-menu {
+                    top: 0px;
+                    @include opacity(1);
+                    visibility: visible;
+                    display: block;
+                    @include rtl-left(100%);
+                    @include rtl-margin-left(-1px);
+                }
+            }
+            .parent {
+                position: relative;
+                &:hover {
+                    > .dropdown-menu {
+                        @include rtl-right(100%);
+                        top: 0px;
+                        @include opacity(1);
+                    }
+                }
+                &.dropdown-submenu {
+                    &:hover {
+                        .dropdown-menu {
+                            right:115%;
+                            display: block;
+                            top: 0;
+                            visibility: visible;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .dropdown-menu {
+        @include rtl-right(auto);
+        @include rtl-left(110%);
+        @include opacity(0);  
+        @include box-shadow(0 5px 15px 0 rgba(0, 0, 0, 0.15));
+        @include transition(all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s);
+        top:0;
+        position:absolute;
+        visibility: hidden;
+        z-index: 999 ;
+        display: block;
+        min-width: $vertical-sub-menu-width;
+        padding: 25px;
+        ul.content{
+            @include rtl-padding-left(15px);
+        }  
+        .column{
+            position:relative;
+            &:before{
+                content: "";
+                @include size(1px,100%);
+                background-color:$border-color;
+                @include rtl-right(30px);
+                top:0;
+                position:absolute;
+            }
+            &.last{
+                &:before{
+                    content: none;
+                }
+            }
+        }
+        &.level1 {
+            .fa {
+                display: none;
+            }
+            margin-top: -1px;
+        }
+        &.level2 {
+            .fa {
+                display: none;
+            }
+        }
+        &.level3 {
+            .fa {
+                display: none;
+            }
+        }
+        ul {
+            list-style-type: none;
+            @include rtl-padding-left(0);
+            > li {
+                > a{
+                    &:hover {
+                        color: $black;
+                    }
+                }
+            }
+        }
+        .sidebar{
+            box-shadow:none;
+            padding:0;
+        }
+    }
+  
+    .w-product {
+        .product-block{
+            text-align: center;
+            .image{
+                border:1px solid $border-color;
+            }
+            .name{
+                min-height:auto;
+                margin-bottom: 0;
+            }
+        }
+        .media-body{
+            display: inline-block;
+            text-align: center;
+        }
+    }
+   
+}

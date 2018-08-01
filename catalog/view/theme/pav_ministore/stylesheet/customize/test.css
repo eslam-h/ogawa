@@ -1,0 +1,97 @@
+
+/* customize for body,body .home1 */ 
+body,body .home1 { 
+background-color:#450c45;
+background-image:url(../../image/pattern/pattern10.png);
+font-size:20px;
+font-family:'Courier New', Courier, monospace 
+} 
+
+/* customize for .bo-mainmenu */ 
+.bo-mainmenu { 
+background-color:#807070;
+background-image:url(../../image/pattern/pattern11.png) 
+} 
+
+/* customize for .pav-megamenu .navbar-nav li a */ 
+.pav-megamenu .navbar-nav li a { 
+color:#2c608a 
+} 
+
+/* customize for .bo-mainmenu .dropdown-menu */ 
+.bo-mainmenu .dropdown-menu { 
+background-color:#2dfae2 
+} 
+
+/* customize for #bo-mainmenu .dropdown-menu */ 
+#bo-mainmenu .dropdown-menu { 
+background-image:url(../../image/pattern/pattern12.png) 
+} 
+
+/* customize for .bo-mainmenu .widget-heading, #bo-mainmenu .dropdown-menu */ 
+.bo-mainmenu .widget-heading, #bo-mainmenu .dropdown-menu { 
+color:#ff94ff 
+} 
+
+/* customize for .bo-mainmenu .dropdown-menu a,.bo-mainmenu .dropdown-menu li a */ 
+.bo-mainmenu .dropdown-menu a,.bo-mainmenu .dropdown-menu li a { 
+color:#e4ff14 
+} 
+
+/* customize for #footer .footer-center */ 
+#footer .footer-center { 
+background-color:#000000;
+background-image:url(../../image/pattern/pattern10.png) 
+} 
+
+/* customize for #footer .footer-center .panel-title,#footer .footer-center .container,#footer .newsletter-v1 .description, footer#footer p, footer#footer p.phone */ 
+#footer .footer-center .panel-title,#footer .footer-center .container,#footer .newsletter-v1 .description, footer#footer p, footer#footer p.phone { 
+color:#1577d9 
+} 
+
+/* customize for #footer .footer-center ul li a, #footer .footer-center ol li a */ 
+#footer .footer-center ul li a, #footer .footer-center ol li a { 
+color:#54de57 
+} 
+
+/* customize for .copyright .inner .copy */ 
+.copyright .inner .copy { 
+color:#15dce6 
+} 
+
+/* customize for .copyright .inner a,.copyright a */ 
+.copyright .inner a,.copyright a { 
+color:#00eb79 
+} 
+
+/* customize for .product-block .name a */ 
+.product-block .name a { 
+color:#d428d4 
+} 
+
+/* customize for .name-price .price .price-new */ 
+.name-price .price .price-new { 
+color:#e6c51e 
+} 
+
+/* customize for .price .price-old */ 
+.price .price-old { 
+color:#1cd9d0 
+} 
+
+/* customize for .product-label.bts */ 
+.product-label.bts { 
+background-color:#269461 
+} 
+
+/* customize for .product-label */ 
+.product-label { 
+color:#7ffff0 
+} 
+
+/* customize for .btn-outline-light */ 
+.btn-outline-light { 
+border-color:#00ff95;
+background-color:#f9faa5;
+color:#b807af 
+} 

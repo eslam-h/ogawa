@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<theme>
+	<header>
+		<title>Header Block</title>
+		<description></description>
+	 	<module>
+	 	 	<title>Social Header</title>
+	 	 	<field>
+	 	 		<name>widget_social</name>
+	 	 		<label>Content</label>
+	 	 		<type>textarea</type>
+	 	 		<lang>1</lang>
+	 	 		<default><![CDATA[
+	 	 			<div class="social">
+					  <ul class="list-inline">  
+					    <li><a href="#"><i class="fa fa-facebook"></i></a></li>  
+					    <li><a href="#"><i class="fa fa-instagram"></i></a></li>    
+					    <li><a href="#"><i class="fa fa-twitter"></i></a></li>  
+					  </ul>
+					</div>
+
+	 	 		]]></default>
+	 		</field>
+	 	</module>
+
+	</header>	
+
+	<footer>
+		<title>Footer Bottom Block</title>
+		<description></description>
+
+		<module>
+	 	 	<title>Contact</title>
+	 	 	<field>
+	 	 		<name>widget_contact</name>
+	 	 		<label>Content</label>
+	 	 		<type>textarea</type>
+	 	 		<lang>1</lang>
+	 	 		<default><![CDATA[
+	 	 			<a class="logo_footer" href="#"><img class="img-responsive" src="image/catalog/logo_footer.png" alt=""></a>
+	 	 			<p>0001 Long Avenue, 90000 New York, NY</p>
+					<p class="phone"> +1 234 567 8910  / +0 123 456 7890</p>
+					<p>email@domain.com</p>
+
+	 	 		]]></default>
+	 		</field>
+	 	</module>
+
+	 	<module>
+	 	 	<title>Payment</title>
+	 	 	<field>
+	 	 		<name>widget_payment</name>
+	 	 		<label>Content</label>
+	 	 		<type>textarea</type>
+	 	 		<lang>1</lang>
+	 	 		<default><![CDATA[
+	 	 			<img class="img-responsive" alt="payment" src="image/catalog/payment.png"> 
+	 	 			]]></default>
+	 		</field>
+	 	</module>		
+
+	</footer>	
+</theme>
+

@@ -1,0 +1,25 @@
+.panel {
+ 	@include box-shadow(0 0px 0px transparent);
+}
+.panel-body .list-group-item{
+	border: none;
+	@include rtl-padding-left(0);
+	i{
+		cursor: pointer;
+		@include size(20px,20px);
+	    text-align: center;
+	    font-size: 12px !important;
+	    color: $theme-color;
+	}
+	ul li{
+		border: none;
+	}
+}
+.nav-tabs{
+	margin-bottom:20px;
+}
+.list-unstyled{
+	span{
+		@include rtl-padding-right(5px);
+	}
+}
