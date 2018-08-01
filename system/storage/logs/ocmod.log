@@ -1,0 +1,3799 @@
+2017-09-26 20:12:49 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+----------------------------------------------------------------
+MOD: comrooles
+
+FILE: system/library/cart/cart.php
+CODE: $this->db->query("UPDATE " . DB_PREFIX . "cart SET quantity = (quantity + " . (int)$quantity . ") WHERE customer_id = '" . (int)$this->customer->getId() . "' AND session_id = '" . $this->db->escape($this->session->getId()) . "' AND product_id = '" . (int)$product_id . "' AND recurring_id = '" . (int)$recurring_id . "' AND `option` = '" . $this->db->escape(json_encode($option)) . "'");
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/model/checkout/order.php
+CODE: $order_id = $this->db->getLastId();
+LINE: 21
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "order_product WHERE order_id = '" . (int)$order_id . "'");
+LINE: 84
+
+FILE: catalog/controller/checkout/cart.php
+CODE: $data['totals'] = array();
+LINE: 232
+
+FILE: catalog/view/theme/default/template/checkout/cart.tpl
+CODE: <?php if ($success) { ?>
+LINE: 24
+
+FILE: catalog/controller/checkout/checkout.php
+CODE: $data['shipping_required'] = $this->cart->hasShipping();
+LINE: 93
+
+FILE: catalog/view/theme/default/template/checkout/checkout.tpl
+CODE: <?php echo $content_top; ?>
+LINE: 27
+CODE: $total = $this->currency->format($this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax')) * $product['quantity'], $this->session->data['currency']);
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/common/cart.php
+CODE: $total = $this->currency->format($this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax')) * $product['quantity'], $this->session->data['currency']);
+LINE: 112
+
+FILE: catalog/controller/checkout/confirm.php
+CODE: $data['products'][] = array(
+LINE: 393
+CODE: 'total'      => $this->currency->format($this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax')) * $product['quantity'], $this->session->data['currency']),
+LINE: 403
+
+FILE: catalog/controller/product/product.php
+CODE: $data['points'] = $product_info['points'];
+LINE: 288
+
+FILE: catalog/view/theme/default/template/product/product.tpl
+CODE: <li class="active"><a href="#tab-description" data-toggle="tab"><?php echo $tab_description; ?></a></li>
+LINE: 41
+CODE: <div class="tab-pane active" id="tab-description"><?php echo $description; ?></div>
+LINE: 55
+
+FILE: catalog/view/theme/pav_ministore/template/product/product.tpl
+CODE: <li class="active"><a href="#tab-description" data-toggle="tab"><?php echo $tab_description; ?></a></li>
+NOT FOUND - OPERATIONS ABORTED!
+CODE: <ul class="nav nav-tabs">
+LINE: 44
+CODE: <ul class="nav nav-tabs">
+NOT FOUND - OPERATIONS ABORTED!
+----------------------------------------------------------------
+MOD: Sales Combination 1 : Buy x get y
+CODE: public function getWeight() {
+LINE: 350
+CODE: $this->sortcombination();
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/model/total/salescombo.php
+CODE: return $availableoffers;
+LINE: 38
+CODE: public function getAvailableOffers($product_id) {
+LINE: 67
+----------------------------------------------------------------
+MOD: Sales Combination 1b : Buy x get y
+CODE: public function getWeight() {
+LINE: 402
+CODE: $this->sortcombination();
+NOT FOUND - OPERATIONS ABORTED!
+CODE: return $availableoffers;
+LINE: 72
+CODE: public function getAvailableOffers($product_id) {
+LINE: 102
+----------------------------------------------------------------
+MOD: Sales Combination 1c : Product Same Options Offer
+CODE: public function getWeight() {
+LINE: 516
+CODE: $this->sortcombination();
+NOT FOUND - OPERATIONS ABORTED!
+CODE: return $availableoffers;
+LINE: 108
+CODE: public function getAvailableOffers($product_id) {
+LINE: 137
+----------------------------------------------------------------
+MOD: Sales Combination 1 : Buy x get y
+CODE: public function getWeight() {
+LINE: 565
+CODE: $this->sortcombination();
+NOT FOUND - OPERATIONS ABORTED!
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "order_product WHERE order_id = '" . (int)$order_id . "'");
+LINE: 74
+CODE: return $availableoffers;
+LINE: 144
+CODE: public function getAvailableOffers($product_id) {
+LINE: 170
+
+FILE: admin/model/catalog/salescombopge.php
+CODE: public function createTable() {
+LINE: 322
+----------------------------------------------------------------
+2017-09-26 20:20:25 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+----------------------------------------------------------------
+MOD: comrooles
+
+FILE: system/library/cart/cart.php
+CODE: $this->db->query("UPDATE " . DB_PREFIX . "cart SET quantity = (quantity + " . (int)$quantity . ") WHERE customer_id = '" . (int)$this->customer->getId() . "' AND session_id = '" . $this->db->escape($this->session->getId()) . "' AND product_id = '" . (int)$product_id . "' AND recurring_id = '" . (int)$recurring_id . "' AND `option` = '" . $this->db->escape(json_encode($option)) . "'");
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/model/checkout/order.php
+CODE: $order_id = $this->db->getLastId();
+LINE: 21
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "order_product WHERE order_id = '" . (int)$order_id . "'");
+LINE: 84
+
+FILE: catalog/controller/checkout/cart.php
+CODE: $data['totals'] = array();
+LINE: 232
+
+FILE: catalog/view/theme/default/template/checkout/cart.tpl
+CODE: <?php if ($success) { ?>
+LINE: 24
+
+FILE: catalog/controller/checkout/checkout.php
+CODE: $data['shipping_required'] = $this->cart->hasShipping();
+LINE: 93
+
+FILE: catalog/view/theme/default/template/checkout/checkout.tpl
+CODE: <?php echo $content_top; ?>
+LINE: 27
+CODE: $total = $this->currency->format($this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax')) * $product['quantity'], $this->session->data['currency']);
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/common/cart.php
+CODE: $total = $this->currency->format($this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax')) * $product['quantity'], $this->session->data['currency']);
+LINE: 112
+
+FILE: catalog/controller/checkout/confirm.php
+CODE: $data['products'][] = array(
+LINE: 393
+CODE: 'total'      => $this->currency->format($this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax')) * $product['quantity'], $this->session->data['currency']),
+LINE: 403
+
+FILE: catalog/controller/product/product.php
+CODE: $data['points'] = $product_info['points'];
+LINE: 288
+
+FILE: catalog/view/theme/default/template/product/product.tpl
+CODE: <li class="active"><a href="#tab-description" data-toggle="tab"><?php echo $tab_description; ?></a></li>
+LINE: 41
+CODE: <div class="tab-pane active" id="tab-description"><?php echo $description; ?></div>
+LINE: 55
+
+FILE: catalog/view/theme/pav_ministore/template/product/product.tpl
+CODE: <li class="active"><a href="#tab-description" data-toggle="tab"><?php echo $tab_description; ?></a></li>
+NOT FOUND - OPERATIONS ABORTED!
+CODE: <ul class="nav nav-tabs">
+LINE: 44
+CODE: <ul class="nav nav-tabs">
+NOT FOUND - OPERATIONS ABORTED!
+----------------------------------------------------------------
+MOD: Sales Combination 1 : Buy x get y
+CODE: public function getWeight() {
+LINE: 350
+CODE: $this->sortcombination();
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/model/total/salescombo.php
+CODE: return $availableoffers;
+LINE: 38
+CODE: public function getAvailableOffers($product_id) {
+LINE: 67
+----------------------------------------------------------------
+MOD: Sales Combination 1b : Buy x get y
+CODE: public function getWeight() {
+LINE: 402
+CODE: $this->sortcombination();
+NOT FOUND - OPERATIONS ABORTED!
+CODE: return $availableoffers;
+LINE: 72
+CODE: public function getAvailableOffers($product_id) {
+LINE: 102
+----------------------------------------------------------------
+MOD: Sales Combination 1c : Product Same Options Offer
+CODE: public function getWeight() {
+LINE: 516
+CODE: $this->sortcombination();
+NOT FOUND - OPERATIONS ABORTED!
+CODE: return $availableoffers;
+LINE: 108
+CODE: public function getAvailableOffers($product_id) {
+LINE: 137
+----------------------------------------------------------------
+MOD: Sales Combination 1 : Buy x get y
+CODE: public function getWeight() {
+LINE: 565
+CODE: $this->sortcombination();
+NOT FOUND - OPERATIONS ABORTED!
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "order_product WHERE order_id = '" . (int)$order_id . "'");
+LINE: 74
+CODE: return $availableoffers;
+LINE: 144
+CODE: public function getAvailableOffers($product_id) {
+LINE: 170
+
+FILE: admin/model/catalog/salescombopge.php
+CODE: public function createTable() {
+LINE: 322
+----------------------------------------------------------------
+2017-09-26 20:20:55 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+----------------------------------------------------------------
+MOD: comrooles
+
+FILE: system/library/cart/cart.php
+CODE: $this->db->query("UPDATE " . DB_PREFIX . "cart SET quantity = (quantity + " . (int)$quantity . ") WHERE customer_id = '" . (int)$this->customer->getId() . "' AND session_id = '" . $this->db->escape($this->session->getId()) . "' AND product_id = '" . (int)$product_id . "' AND recurring_id = '" . (int)$recurring_id . "' AND `option` = '" . $this->db->escape(json_encode($option)) . "'");
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/model/checkout/order.php
+CODE: $order_id = $this->db->getLastId();
+LINE: 21
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "order_product WHERE order_id = '" . (int)$order_id . "'");
+LINE: 84
+
+FILE: catalog/controller/checkout/cart.php
+CODE: $data['totals'] = array();
+LINE: 232
+
+FILE: catalog/view/theme/default/template/checkout/cart.tpl
+CODE: <?php if ($success) { ?>
+LINE: 24
+
+FILE: catalog/controller/checkout/checkout.php
+CODE: $data['shipping_required'] = $this->cart->hasShipping();
+LINE: 93
+
+FILE: catalog/view/theme/default/template/checkout/checkout.tpl
+CODE: <?php echo $content_top; ?>
+LINE: 27
+CODE: $total = $this->currency->format($this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax')) * $product['quantity'], $this->session->data['currency']);
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/common/cart.php
+CODE: $total = $this->currency->format($this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax')) * $product['quantity'], $this->session->data['currency']);
+LINE: 112
+
+FILE: catalog/controller/checkout/confirm.php
+CODE: $data['products'][] = array(
+LINE: 393
+CODE: 'total'      => $this->currency->format($this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax')) * $product['quantity'], $this->session->data['currency']),
+LINE: 403
+
+FILE: catalog/controller/product/product.php
+CODE: $data['points'] = $product_info['points'];
+LINE: 288
+
+FILE: catalog/view/theme/default/template/product/product.tpl
+CODE: <li class="active"><a href="#tab-description" data-toggle="tab"><?php echo $tab_description; ?></a></li>
+LINE: 41
+CODE: <div class="tab-pane active" id="tab-description"><?php echo $description; ?></div>
+LINE: 55
+
+FILE: catalog/view/theme/pav_ministore/template/product/product.tpl
+CODE: <li class="active"><a href="#tab-description" data-toggle="tab"><?php echo $tab_description; ?></a></li>
+NOT FOUND - OPERATIONS ABORTED!
+CODE: <ul class="nav nav-tabs">
+LINE: 44
+CODE: <ul class="nav nav-tabs">
+NOT FOUND - OPERATIONS ABORTED!
+----------------------------------------------------------------
+MOD: Sales Combination 1 : Buy x get y
+CODE: public function getWeight() {
+LINE: 350
+CODE: $this->sortcombination();
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/model/total/salescombo.php
+CODE: return $availableoffers;
+LINE: 38
+CODE: public function getAvailableOffers($product_id) {
+LINE: 67
+----------------------------------------------------------------
+MOD: Sales Combination 1b : Buy x get y
+CODE: public function getWeight() {
+LINE: 402
+CODE: $this->sortcombination();
+NOT FOUND - OPERATIONS ABORTED!
+CODE: return $availableoffers;
+LINE: 72
+CODE: public function getAvailableOffers($product_id) {
+LINE: 102
+----------------------------------------------------------------
+MOD: Sales Combination 1c : Product Same Options Offer
+CODE: public function getWeight() {
+LINE: 516
+CODE: $this->sortcombination();
+NOT FOUND - OPERATIONS ABORTED!
+CODE: return $availableoffers;
+LINE: 108
+CODE: public function getAvailableOffers($product_id) {
+LINE: 137
+----------------------------------------------------------------
+MOD: Sales Combination 1 : Buy x get y
+CODE: public function getWeight() {
+LINE: 565
+CODE: $this->sortcombination();
+NOT FOUND - OPERATIONS ABORTED!
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "order_product WHERE order_id = '" . (int)$order_id . "'");
+LINE: 74
+CODE: return $availableoffers;
+LINE: 144
+CODE: public function getAvailableOffers($product_id) {
+LINE: 170
+
+FILE: admin/model/catalog/salescombopge.php
+CODE: public function createTable() {
+LINE: 322
+----------------------------------------------------------------
+MOD: Offer Pages Creator: Customized Html, Messages, Popup, Pages
+
+FILE: admin/language/arabi/common/menu.php
+CODE: $_['text_category']
+LINE: 12
+
+FILE: catalog/controller/common/header.php
+CODE: if (isset($this->request->get['route'])) {
+LINE: 191
+CODE: $data['base'] = $server;
+LINE: 50
+
+FILE: admin/controller/common/column_left.php
+CODE: if ($catalog) {
+LINE: 187
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: $_['text_zone']
+LINE: 86
+
+FILE: catalog/controller/product/category.php
+CODE: $data['categories'] = array();
+LINE: 171
+
+FILE: catalog/view/theme/default/template/product/category.tpl
+CODE: <?php if ($categories) { ?>
+LINE: 31
+CODE: <?php echo $footer; ?>
+LINE: 175
+CODE: <?php echo $footer; ?>
+LINE: 198
+
+FILE: catalog/view/theme/pav_ministore/template/product/category.tpl
+CODE: <?php if ($categories) { ?>
+NOT FOUND - OPERATIONS ABORTED!
+CODE: $data['discounts'] = array();
+LINE: 328
+CODE: <?php if ($price) { ?>
+LINE: 158
+CODE: <?php echo $footer; ?>
+LINE: 629
+CODE: <?php echo $footer; ?>
+LINE: 652
+CODE: <?php if ($price) { ?>
+LINE: 93
+CODE: <?php echo $footer; ?>
+LINE: 628
+CODE: <?php echo $footer; ?>
+LINE: 651
+
+FILE: catalog/controller/account/account.php
+CODE: $data['text_newsletter'] = $this->language->get('text_newsletter');
+LINE: 61
+
+FILE: catalog/view/theme/default/template/account/account.tpl
+CODE: <h2><?php echo $text_my_newsletter; ?></h2>
+LINE: 55
+
+FILE: catalog/controller/common/column_left.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 33
+
+FILE: catalog/controller/common/column_right.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 33
+
+FILE: catalog/controller/common/content_bottom.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 33
+
+FILE: catalog/controller/common/content_top.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 33
+
+FILE: catalog/controller/startup/seo_url.php
+CODE: if ($url[0] == 'manufacturer_id') {
+LINE: 41
+CODE: $this->request->get['route'] = $query->row['query'];
+LINE: 50
+CODE: } elseif (isset($this->request->get['manufacturer_id'])) {
+LINE: 72
+CODE: } elseif ($key == 'path') {
+LINE: 110
+----------------------------------------------------------------
+2017-10-07 13:19:04 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+----------------------------------------------------------------
+MOD: comrooles
+
+FILE: system/library/cart/cart.php
+CODE: $this->db->query("UPDATE " . DB_PREFIX . "cart SET quantity = (quantity + " . (int)$quantity . ") WHERE api_id = '" . (isset($this->session->data['api_id']) ? (int)$this->session->data['api_id'] : 0) . "' AND customer_id = '" . (int)$this->customer->getId() . "' AND session_id = '" . $this->db->escape($this->session->getId()) . "' AND product_id = '" . (int)$product_id . "' AND recurring_id = '" . (int)$recurring_id . "' AND `option` = '" . $this->db->escape(json_encode($option)) . "'");
+LINE: 278
+CODE: public function getWeight() {
+LINE: 378
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "cart WHERE cart_id = '" . (int)$cart_id . "' AND api_id = '" . (isset($this->session->data['api_id']) ? (int)$this->session->data['api_id'] : 0) . "' AND customer_id = '" . (int)$this->customer->getId() . "' AND session_id = '" . $this->db->escape($this->session->getId()) . "'");
+LINE: 288
+CODE: $this->db->query("UPDATE " . DB_PREFIX . "cart SET quantity = '" . (int)$quantity . "' WHERE cart_id = '" . (int)$cart_id . "' AND api_id = '" . (isset($this->session->data['api_id']) ? (int)$this->session->data['api_id'] : 0) . "' AND customer_id = '" . (int)$this->customer->getId() . "' AND session_id = '" . $this->db->escape($this->session->getId()) . "'");
+LINE: 284
+CODE: $this->weight = $registry->get('weight');
+LINE: 14
+CODE: $product_data[] = array(
+LINE: 241
+CODE: if ($product['tax_class_id']) {
+LINE: 411
+CODE: $total += $this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax')) * $product['quantity'];
+LINE: 432
+CODE: $product_id =  $cart['product_id'];
+LINE: 321
+CODE: $download_data = array();
+LINE: 219
+
+FILE: catalog/model/checkout/order.php
+CODE: $order_id = $this->db->getLastId();
+LINE: 21
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "order_product WHERE order_id = '" . (int)$order_id . "'");
+LINE: 84
+
+FILE: catalog/controller/checkout/cart.php
+CODE: $data['totals'] = array();
+LINE: 232
+
+FILE: catalog/view/theme/default/template/checkout/cart.tpl
+CODE: <?php if ($success) { ?>
+LINE: 24
+
+FILE: catalog/controller/checkout/checkout.php
+CODE: $data['shipping_required'] = $this->cart->hasShipping();
+LINE: 93
+
+FILE: catalog/view/theme/default/template/checkout/checkout.tpl
+CODE: <?php echo $content_top; ?>
+LINE: 28
+CODE: $total = $this->currency->format($unit_price * $product['quantity'], $this->session->data['currency']);
+LINE: 129
+
+FILE: catalog/controller/common/cart.php
+CODE: $total = $this->currency->format($unit_price * $product['quantity'], $this->session->data['currency']);
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/checkout/confirm.php
+CODE: $data['products'][] = array(
+LINE: 393
+CODE: 'total'      => $this->currency->format($this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax')) * $product['quantity'], $this->session->data['currency']),
+LINE: 403
+
+FILE: catalog/controller/product/product.php
+CODE: $data['points'] = $product_info['points'];
+LINE: 288
+
+FILE: catalog/view/theme/default/template/product/product.tpl
+CODE: <li class="active"><a href="#tab-description" data-toggle="tab"><?php echo $tab_description; ?></a></li>
+LINE: 41
+CODE: <div class="tab-pane active" id="tab-description"><?php echo $description; ?></div>
+LINE: 55
+
+FILE: catalog/view/theme/pav_ministore/template/product/product.tpl
+CODE: <li class="active"><a href="#tab-description" data-toggle="tab"><?php echo $tab_description; ?></a></li>
+NOT FOUND - OPERATIONS ABORTED!
+CODE: <ul class="nav nav-tabs">
+LINE: 44
+CODE: <ul class="nav nav-tabs">
+NOT FOUND - OPERATIONS ABORTED!
+----------------------------------------------------------------
+MOD: Sales Combination 1 : Buy x get y
+CODE: public function getWeight() {
+LINE: 448
+CODE: $this->sortcombination();
+LINE: 300
+LINE: 307
+LINE: 313
+
+FILE: catalog/model/extension/total/salescombo.php
+CODE: return $availableoffers;
+LINE: 39
+CODE: public function getAvailableOffers($product_id) {
+LINE: 66
+----------------------------------------------------------------
+MOD: Sales Combination 1b : Buy x get y
+CODE: public function getWeight() {
+LINE: 503
+CODE: $this->sortcombination();
+LINE: 300
+LINE: 308
+LINE: 315
+CODE: return $availableoffers;
+LINE: 71
+CODE: public function getAvailableOffers($product_id) {
+LINE: 99
+----------------------------------------------------------------
+MOD: Sales Combination 1c : Product Same Options Offer
+CODE: public function getWeight() {
+LINE: 620
+CODE: $this->sortcombination();
+LINE: 300
+LINE: 309
+LINE: 317
+CODE: return $availableoffers;
+LINE: 105
+CODE: public function getAvailableOffers($product_id) {
+LINE: 134
+----------------------------------------------------------------
+MOD: Sales Combination 1 : Buy x get y
+CODE: public function getWeight() {
+LINE: 672
+CODE: $this->sortcombination();
+LINE: 300
+LINE: 310
+LINE: 319
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "order_product WHERE order_id = '" . (int)$order_id . "'");
+LINE: 74
+CODE: return $availableoffers;
+LINE: 141
+CODE: public function getAvailableOffers($product_id) {
+LINE: 165
+
+FILE: admin/model/catalog/salescombopge.php
+CODE: public function createTable() {
+LINE: 315
+----------------------------------------------------------------
+MOD: Offer Pages Creator: Customized Html, Messages, Popup, Pages
+
+FILE: admin/language/arabi/common/menu.php
+CODE: $_['text_category']
+LINE: 12
+
+FILE: catalog/controller/common/header.php
+CODE: if (isset($this->request->get['route'])) {
+LINE: 191
+CODE: $data['base'] = $server;
+LINE: 50
+
+FILE: admin/controller/common/column_left.php
+CODE: if ($catalog) {
+LINE: 187
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: $_['text_zone']
+LINE: 86
+
+FILE: catalog/controller/product/category.php
+CODE: $data['categories'] = array();
+LINE: 171
+
+FILE: catalog/view/theme/default/template/product/category.tpl
+CODE: <?php if ($categories) { ?>
+LINE: 31
+CODE: <?php echo $footer; ?>
+LINE: 175
+CODE: <?php echo $footer; ?>
+LINE: 198
+
+FILE: catalog/view/theme/pav_ministore/template/product/category.tpl
+CODE: <?php if ($categories) { ?>
+NOT FOUND - OPERATIONS ABORTED!
+CODE: $data['discounts'] = array();
+LINE: 328
+CODE: <?php if ($price) { ?>
+LINE: 158
+CODE: <?php echo $footer; ?>
+LINE: 629
+CODE: <?php echo $footer; ?>
+LINE: 652
+CODE: <?php if ($price) { ?>
+LINE: 93
+CODE: <?php echo $footer; ?>
+LINE: 628
+CODE: <?php echo $footer; ?>
+LINE: 651
+
+FILE: catalog/controller/account/account.php
+CODE: $data['text_newsletter'] = $this->language->get('text_newsletter');
+LINE: 61
+
+FILE: catalog/view/theme/default/template/account/account.tpl
+CODE: <h2><?php echo $text_my_newsletter; ?></h2>
+LINE: 55
+
+FILE: catalog/controller/common/column_left.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 33
+
+FILE: catalog/controller/common/column_right.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 33
+
+FILE: catalog/controller/common/content_bottom.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 33
+
+FILE: catalog/controller/common/content_top.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 33
+
+FILE: catalog/controller/startup/seo_url.php
+CODE: if ($url[0] == 'manufacturer_id') {
+LINE: 41
+CODE: $this->request->get['route'] = $query->row['query'];
+LINE: 50
+CODE: } elseif (isset($this->request->get['manufacturer_id'])) {
+LINE: 72
+CODE: } elseif ($key == 'path') {
+LINE: 110
+----------------------------------------------------------------
+2017-10-07 13:19:58 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+----------------------------------------------------------------
+MOD: comrooles
+
+FILE: system/library/cart/cart.php
+CODE: $this->db->query("UPDATE " . DB_PREFIX . "cart SET quantity = (quantity + " . (int)$quantity . ") WHERE api_id = '" . (isset($this->session->data['api_id']) ? (int)$this->session->data['api_id'] : 0) . "' AND customer_id = '" . (int)$this->customer->getId() . "' AND session_id = '" . $this->db->escape($this->session->getId()) . "' AND product_id = '" . (int)$product_id . "' AND recurring_id = '" . (int)$recurring_id . "' AND `option` = '" . $this->db->escape(json_encode($option)) . "'");
+LINE: 278
+CODE: public function getWeight() {
+LINE: 378
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "cart WHERE cart_id = '" . (int)$cart_id . "' AND api_id = '" . (isset($this->session->data['api_id']) ? (int)$this->session->data['api_id'] : 0) . "' AND customer_id = '" . (int)$this->customer->getId() . "' AND session_id = '" . $this->db->escape($this->session->getId()) . "'");
+LINE: 288
+CODE: $this->db->query("UPDATE " . DB_PREFIX . "cart SET quantity = '" . (int)$quantity . "' WHERE cart_id = '" . (int)$cart_id . "' AND api_id = '" . (isset($this->session->data['api_id']) ? (int)$this->session->data['api_id'] : 0) . "' AND customer_id = '" . (int)$this->customer->getId() . "' AND session_id = '" . $this->db->escape($this->session->getId()) . "'");
+LINE: 284
+CODE: $this->weight = $registry->get('weight');
+LINE: 14
+CODE: $product_data[] = array(
+LINE: 241
+CODE: if ($product['tax_class_id']) {
+LINE: 411
+CODE: $total += $this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax')) * $product['quantity'];
+LINE: 432
+CODE: $product_id =  $cart['product_id'];
+LINE: 321
+CODE: $download_data = array();
+LINE: 219
+
+FILE: catalog/model/checkout/order.php
+CODE: $order_id = $this->db->getLastId();
+LINE: 21
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "order_product WHERE order_id = '" . (int)$order_id . "'");
+LINE: 84
+
+FILE: catalog/controller/checkout/cart.php
+CODE: $data['totals'] = array();
+LINE: 232
+
+FILE: catalog/view/theme/default/template/checkout/cart.tpl
+CODE: <?php if ($success) { ?>
+LINE: 24
+
+FILE: catalog/controller/checkout/checkout.php
+CODE: $data['shipping_required'] = $this->cart->hasShipping();
+LINE: 93
+
+FILE: catalog/view/theme/default/template/checkout/checkout.tpl
+CODE: <?php echo $content_top; ?>
+LINE: 28
+CODE: $total = $this->currency->format($unit_price * $product['quantity'], $this->session->data['currency']);
+LINE: 129
+
+FILE: catalog/controller/common/cart.php
+CODE: $total = $this->currency->format($unit_price * $product['quantity'], $this->session->data['currency']);
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/checkout/confirm.php
+CODE: $data['products'][] = array(
+LINE: 393
+CODE: 'total'      => $this->currency->format($this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax')) * $product['quantity'], $this->session->data['currency']),
+LINE: 403
+
+FILE: catalog/controller/product/product.php
+CODE: $data['points'] = $product_info['points'];
+LINE: 295
+
+FILE: catalog/view/theme/default/template/product/product.tpl
+CODE: <li class="active"><a href="#tab-description" data-toggle="tab"><?php echo $tab_description; ?></a></li>
+LINE: 41
+CODE: <div class="tab-pane active" id="tab-description"><?php echo $description; ?></div>
+LINE: 55
+
+FILE: catalog/view/theme/pav_ministore/template/product/product.tpl
+CODE: <li class="active"><a href="#tab-description" data-toggle="tab"><?php echo $tab_description; ?></a></li>
+NOT FOUND - OPERATIONS ABORTED!
+CODE: <ul class="nav nav-tabs">
+LINE: 44
+CODE: <ul class="nav nav-tabs">
+NOT FOUND - OPERATIONS ABORTED!
+----------------------------------------------------------------
+MOD: Sales Combination 1 : Buy x get y
+CODE: public function getWeight() {
+LINE: 448
+CODE: $this->sortcombination();
+LINE: 300
+LINE: 307
+LINE: 313
+
+FILE: catalog/model/extension/total/salescombo.php
+CODE: return $availableoffers;
+LINE: 39
+CODE: public function getAvailableOffers($product_id) {
+LINE: 66
+----------------------------------------------------------------
+MOD: Sales Combination 1b : Buy x get y
+CODE: public function getWeight() {
+LINE: 503
+CODE: $this->sortcombination();
+LINE: 300
+LINE: 308
+LINE: 315
+CODE: return $availableoffers;
+LINE: 71
+CODE: public function getAvailableOffers($product_id) {
+LINE: 99
+----------------------------------------------------------------
+MOD: Sales Combination 1c : Product Same Options Offer
+CODE: public function getWeight() {
+LINE: 620
+CODE: $this->sortcombination();
+LINE: 300
+LINE: 309
+LINE: 317
+CODE: return $availableoffers;
+LINE: 105
+CODE: public function getAvailableOffers($product_id) {
+LINE: 134
+----------------------------------------------------------------
+MOD: Sales Combination 1 : Buy x get y
+CODE: public function getWeight() {
+LINE: 672
+CODE: $this->sortcombination();
+LINE: 300
+LINE: 310
+LINE: 319
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "order_product WHERE order_id = '" . (int)$order_id . "'");
+LINE: 74
+CODE: return $availableoffers;
+LINE: 141
+CODE: public function getAvailableOffers($product_id) {
+LINE: 165
+
+FILE: admin/model/catalog/salescombopge.php
+CODE: public function createTable() {
+LINE: 315
+----------------------------------------------------------------
+MOD: Offer Pages Creator: Customized Html, Messages, Popup, Pages
+
+FILE: admin/language/arabi/common/menu.php
+CODE: $_['text_category']
+LINE: 12
+
+FILE: catalog/controller/common/header.php
+CODE: if (isset($this->request->get['route'])) {
+LINE: 191
+CODE: $data['base'] = $server;
+LINE: 50
+
+FILE: admin/controller/common/column_left.php
+CODE: if ($catalog) {
+LINE: 187
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: $_['text_zone']
+LINE: 86
+
+FILE: catalog/controller/product/category.php
+CODE: $data['categories'] = array();
+LINE: 171
+
+FILE: catalog/view/theme/default/template/product/category.tpl
+CODE: <?php if ($categories) { ?>
+LINE: 31
+CODE: <?php echo $footer; ?>
+LINE: 175
+CODE: <?php echo $footer; ?>
+LINE: 198
+
+FILE: catalog/view/theme/pav_ministore/template/product/category.tpl
+CODE: <?php if ($categories) { ?>
+NOT FOUND - OPERATIONS ABORTED!
+CODE: $data['discounts'] = array();
+LINE: 344
+CODE: <?php if ($price) { ?>
+LINE: 158
+CODE: <?php echo $footer; ?>
+LINE: 629
+CODE: <?php echo $footer; ?>
+LINE: 652
+CODE: <?php if ($price) { ?>
+LINE: 93
+CODE: <?php echo $footer; ?>
+LINE: 628
+CODE: <?php echo $footer; ?>
+LINE: 651
+
+FILE: catalog/controller/account/account.php
+CODE: $data['text_newsletter'] = $this->language->get('text_newsletter');
+LINE: 61
+
+FILE: catalog/view/theme/default/template/account/account.tpl
+CODE: <h2><?php echo $text_my_newsletter; ?></h2>
+LINE: 55
+
+FILE: catalog/controller/common/column_left.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 33
+
+FILE: catalog/controller/common/column_right.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 33
+
+FILE: catalog/controller/common/content_bottom.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 33
+
+FILE: catalog/controller/common/content_top.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 33
+
+FILE: catalog/controller/startup/seo_url.php
+CODE: if ($url[0] == 'manufacturer_id') {
+LINE: 41
+CODE: $this->request->get['route'] = $query->row['query'];
+LINE: 50
+CODE: } elseif (isset($this->request->get['manufacturer_id'])) {
+LINE: 72
+CODE: } elseif ($key == 'path') {
+LINE: 110
+----------------------------------------------------------------
+2017-10-07 13:22:14 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+----------------------------------------------------------------
+MOD: comrooles
+
+FILE: system/library/cart/cart.php
+CODE: $this->db->query("UPDATE " . DB_PREFIX . "cart SET quantity = (quantity + " . (int)$quantity . ") WHERE api_id = '" . (isset($this->session->data['api_id']) ? (int)$this->session->data['api_id'] : 0) . "' AND customer_id = '" . (int)$this->customer->getId() . "' AND session_id = '" . $this->db->escape($this->session->getId()) . "' AND product_id = '" . (int)$product_id . "' AND recurring_id = '" . (int)$recurring_id . "' AND `option` = '" . $this->db->escape(json_encode($option)) . "'");
+LINE: 278
+CODE: public function getWeight() {
+LINE: 378
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "cart WHERE cart_id = '" . (int)$cart_id . "' AND api_id = '" . (isset($this->session->data['api_id']) ? (int)$this->session->data['api_id'] : 0) . "' AND customer_id = '" . (int)$this->customer->getId() . "' AND session_id = '" . $this->db->escape($this->session->getId()) . "'");
+LINE: 288
+CODE: $this->db->query("UPDATE " . DB_PREFIX . "cart SET quantity = '" . (int)$quantity . "' WHERE cart_id = '" . (int)$cart_id . "' AND api_id = '" . (isset($this->session->data['api_id']) ? (int)$this->session->data['api_id'] : 0) . "' AND customer_id = '" . (int)$this->customer->getId() . "' AND session_id = '" . $this->db->escape($this->session->getId()) . "'");
+LINE: 284
+CODE: $this->weight = $registry->get('weight');
+LINE: 14
+CODE: $product_data[] = array(
+LINE: 241
+CODE: if ($product['tax_class_id']) {
+LINE: 411
+CODE: $total += $this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax')) * $product['quantity'];
+LINE: 432
+CODE: $product_id =  $cart['product_id'];
+LINE: 321
+CODE: $download_data = array();
+LINE: 219
+
+FILE: catalog/model/checkout/order.php
+CODE: $order_id = $this->db->getLastId();
+LINE: 21
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "order_product WHERE order_id = '" . (int)$order_id . "'");
+LINE: 84
+
+FILE: catalog/controller/checkout/cart.php
+CODE: $data['totals'] = array();
+LINE: 232
+
+FILE: catalog/view/theme/default/template/checkout/cart.tpl
+CODE: <?php if ($success) { ?>
+LINE: 24
+
+FILE: catalog/controller/checkout/checkout.php
+CODE: $data['shipping_required'] = $this->cart->hasShipping();
+LINE: 93
+
+FILE: catalog/view/theme/default/template/checkout/checkout.tpl
+CODE: <?php echo $content_top; ?>
+LINE: 28
+CODE: $total = $this->currency->format($unit_price * $product['quantity'], $this->session->data['currency']);
+LINE: 129
+
+FILE: catalog/controller/common/cart.php
+CODE: $total = $this->currency->format($unit_price * $product['quantity'], $this->session->data['currency']);
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/checkout/confirm.php
+CODE: $data['products'][] = array(
+LINE: 393
+CODE: 'total'      => $this->currency->format($this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax')) * $product['quantity'], $this->session->data['currency']),
+LINE: 403
+
+FILE: catalog/controller/product/product.php
+CODE: $data['points'] = $product_info['points'];
+LINE: 295
+
+FILE: catalog/view/theme/default/template/product/product.tpl
+CODE: <li class="active"><a href="#tab-description" data-toggle="tab"><?php echo $tab_description; ?></a></li>
+LINE: 41
+CODE: <div class="tab-pane active" id="tab-description"><?php echo $description; ?></div>
+LINE: 55
+
+FILE: catalog/view/theme/pav_ministore/template/product/product.tpl
+CODE: <li class="active"><a href="#tab-description" data-toggle="tab"><?php echo $tab_description; ?></a></li>
+NOT FOUND - OPERATIONS ABORTED!
+CODE: <ul class="nav nav-tabs">
+LINE: 44
+CODE: <ul class="nav nav-tabs">
+NOT FOUND - OPERATIONS ABORTED!
+----------------------------------------------------------------
+MOD: Sales Combination 1 : Buy x get y
+CODE: public function getWeight() {
+LINE: 448
+CODE: $this->sortcombination();
+LINE: 300
+LINE: 307
+LINE: 313
+
+FILE: catalog/model/extension/total/salescombo.php
+CODE: return $availableoffers;
+LINE: 39
+CODE: public function getAvailableOffers($product_id) {
+LINE: 66
+----------------------------------------------------------------
+MOD: Sales Combination 1b : Buy x get y
+CODE: public function getWeight() {
+LINE: 503
+CODE: $this->sortcombination();
+LINE: 300
+LINE: 308
+LINE: 315
+CODE: return $availableoffers;
+LINE: 71
+CODE: public function getAvailableOffers($product_id) {
+LINE: 99
+----------------------------------------------------------------
+MOD: Sales Combination 1c : Product Same Options Offer
+CODE: public function getWeight() {
+LINE: 620
+CODE: $this->sortcombination();
+LINE: 300
+LINE: 309
+LINE: 317
+CODE: return $availableoffers;
+LINE: 105
+CODE: public function getAvailableOffers($product_id) {
+LINE: 134
+----------------------------------------------------------------
+MOD: Sales Combination 1 : Buy x get y
+CODE: public function getWeight() {
+LINE: 672
+CODE: $this->sortcombination();
+LINE: 300
+LINE: 310
+LINE: 319
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "order_product WHERE order_id = '" . (int)$order_id . "'");
+LINE: 74
+CODE: return $availableoffers;
+LINE: 141
+CODE: public function getAvailableOffers($product_id) {
+LINE: 165
+
+FILE: admin/model/catalog/salescombopge.php
+CODE: public function createTable() {
+LINE: 315
+----------------------------------------------------------------
+2017-10-07 13:29:14 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+----------------------------------------------------------------
+MOD: comrooles
+
+FILE: system/library/cart/cart.php
+CODE: $this->db->query("UPDATE " . DB_PREFIX . "cart SET quantity = (quantity + " . (int)$quantity . ") WHERE api_id = '" . (isset($this->session->data['api_id']) ? (int)$this->session->data['api_id'] : 0) . "' AND customer_id = '" . (int)$this->customer->getId() . "' AND session_id = '" . $this->db->escape($this->session->getId()) . "' AND product_id = '" . (int)$product_id . "' AND recurring_id = '" . (int)$recurring_id . "' AND `option` = '" . $this->db->escape(json_encode($option)) . "'");
+LINE: 278
+CODE: public function getWeight() {
+LINE: 378
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "cart WHERE cart_id = '" . (int)$cart_id . "' AND api_id = '" . (isset($this->session->data['api_id']) ? (int)$this->session->data['api_id'] : 0) . "' AND customer_id = '" . (int)$this->customer->getId() . "' AND session_id = '" . $this->db->escape($this->session->getId()) . "'");
+LINE: 288
+CODE: $this->db->query("UPDATE " . DB_PREFIX . "cart SET quantity = '" . (int)$quantity . "' WHERE cart_id = '" . (int)$cart_id . "' AND api_id = '" . (isset($this->session->data['api_id']) ? (int)$this->session->data['api_id'] : 0) . "' AND customer_id = '" . (int)$this->customer->getId() . "' AND session_id = '" . $this->db->escape($this->session->getId()) . "'");
+LINE: 284
+CODE: $this->weight = $registry->get('weight');
+LINE: 14
+CODE: $product_data[] = array(
+LINE: 241
+CODE: if ($product['tax_class_id']) {
+LINE: 411
+CODE: $total += $this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax')) * $product['quantity'];
+LINE: 432
+CODE: $product_id =  $cart['product_id'];
+LINE: 321
+CODE: $download_data = array();
+LINE: 219
+
+FILE: catalog/model/checkout/order.php
+CODE: $order_id = $this->db->getLastId();
+LINE: 21
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "order_product WHERE order_id = '" . (int)$order_id . "'");
+LINE: 84
+
+FILE: catalog/controller/checkout/cart.php
+CODE: $data['totals'] = array();
+LINE: 232
+
+FILE: catalog/view/theme/default/template/checkout/cart.tpl
+CODE: <?php if ($success) { ?>
+LINE: 24
+
+FILE: catalog/controller/checkout/checkout.php
+CODE: $data['shipping_required'] = $this->cart->hasShipping();
+LINE: 93
+
+FILE: catalog/view/theme/default/template/checkout/checkout.tpl
+CODE: <?php echo $content_top; ?>
+LINE: 28
+CODE: $total = $this->currency->format($unit_price * $product['quantity'], $this->session->data['currency']);
+LINE: 129
+
+FILE: catalog/controller/common/cart.php
+CODE: $total = $this->currency->format($unit_price * $product['quantity'], $this->session->data['currency']);
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/checkout/confirm.php
+CODE: $data['products'][] = array(
+LINE: 393
+CODE: 'total'      => $this->currency->format($this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax')) * $product['quantity'], $this->session->data['currency']),
+LINE: 403
+
+FILE: catalog/controller/product/product.php
+CODE: $data['points'] = $product_info['points'];
+LINE: 288
+
+FILE: catalog/view/theme/default/template/product/product.tpl
+CODE: <li class="active"><a href="#tab-description" data-toggle="tab"><?php echo $tab_description; ?></a></li>
+LINE: 41
+CODE: <div class="tab-pane active" id="tab-description"><?php echo $description; ?></div>
+LINE: 55
+
+FILE: catalog/view/theme/pav_ministore/template/product/product.tpl
+CODE: <li class="active"><a href="#tab-description" data-toggle="tab"><?php echo $tab_description; ?></a></li>
+NOT FOUND - OPERATIONS ABORTED!
+CODE: <ul class="nav nav-tabs">
+LINE: 44
+CODE: <ul class="nav nav-tabs">
+NOT FOUND - OPERATIONS ABORTED!
+----------------------------------------------------------------
+MOD: Sales Combination 1 : Buy x get y
+CODE: public function getWeight() {
+LINE: 448
+CODE: $this->sortcombination();
+LINE: 300
+LINE: 307
+LINE: 313
+
+FILE: catalog/model/extension/total/salescombo.php
+CODE: return $availableoffers;
+LINE: 39
+CODE: public function getAvailableOffers($product_id) {
+LINE: 66
+----------------------------------------------------------------
+MOD: Sales Combination 1b : Buy x get y
+CODE: public function getWeight() {
+LINE: 503
+CODE: $this->sortcombination();
+LINE: 300
+LINE: 308
+LINE: 315
+CODE: return $availableoffers;
+LINE: 71
+CODE: public function getAvailableOffers($product_id) {
+LINE: 99
+----------------------------------------------------------------
+MOD: Sales Combination 1c : Product Same Options Offer
+CODE: public function getWeight() {
+LINE: 620
+CODE: $this->sortcombination();
+LINE: 300
+LINE: 309
+LINE: 317
+CODE: return $availableoffers;
+LINE: 105
+CODE: public function getAvailableOffers($product_id) {
+LINE: 134
+----------------------------------------------------------------
+MOD: Sales Combination 1 : Buy x get y
+CODE: public function getWeight() {
+LINE: 672
+CODE: $this->sortcombination();
+LINE: 300
+LINE: 310
+LINE: 319
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "order_product WHERE order_id = '" . (int)$order_id . "'");
+LINE: 74
+CODE: return $availableoffers;
+LINE: 141
+CODE: public function getAvailableOffers($product_id) {
+LINE: 165
+
+FILE: admin/model/catalog/salescombopge.php
+CODE: public function createTable() {
+LINE: 315
+----------------------------------------------------------------
+MOD: Offer Pages Creator: Customized Html, Messages, Popup, Pages
+
+FILE: admin/language/arabi/common/menu.php
+CODE: $_['text_category']
+LINE: 12
+
+FILE: catalog/controller/common/header.php
+CODE: if (isset($this->request->get['route'])) {
+LINE: 191
+CODE: $data['base'] = $server;
+LINE: 50
+
+FILE: admin/controller/common/column_left.php
+CODE: if ($catalog) {
+LINE: 187
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: $_['text_zone']
+LINE: 86
+
+FILE: catalog/controller/product/category.php
+CODE: $data['categories'] = array();
+LINE: 171
+
+FILE: catalog/view/theme/default/template/product/category.tpl
+CODE: <?php if ($categories) { ?>
+LINE: 31
+CODE: <?php echo $footer; ?>
+LINE: 175
+CODE: <?php echo $footer; ?>
+LINE: 198
+
+FILE: catalog/view/theme/pav_ministore/template/product/category.tpl
+CODE: <?php if ($categories) { ?>
+NOT FOUND - OPERATIONS ABORTED!
+CODE: $data['discounts'] = array();
+LINE: 328
+CODE: <?php if ($price) { ?>
+LINE: 158
+CODE: <?php echo $footer; ?>
+LINE: 629
+CODE: <?php echo $footer; ?>
+LINE: 652
+CODE: <?php if ($price) { ?>
+LINE: 93
+CODE: <?php echo $footer; ?>
+LINE: 628
+CODE: <?php echo $footer; ?>
+LINE: 651
+
+FILE: catalog/controller/account/account.php
+CODE: $data['text_newsletter'] = $this->language->get('text_newsletter');
+LINE: 61
+
+FILE: catalog/view/theme/default/template/account/account.tpl
+CODE: <h2><?php echo $text_my_newsletter; ?></h2>
+LINE: 55
+
+FILE: catalog/controller/common/column_left.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 33
+
+FILE: catalog/controller/common/column_right.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 33
+
+FILE: catalog/controller/common/content_bottom.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 33
+
+FILE: catalog/controller/common/content_top.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 33
+
+FILE: catalog/controller/startup/seo_url.php
+CODE: if ($url[0] == 'manufacturer_id') {
+LINE: 41
+CODE: $this->request->get['route'] = $query->row['query'];
+LINE: 50
+CODE: } elseif (isset($this->request->get['manufacturer_id'])) {
+LINE: 72
+CODE: } elseif ($key == 'path') {
+LINE: 110
+----------------------------------------------------------------
+2017-11-06 18:48:27 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+----------------------------------------------------------------
+MOD: comrooles
+
+FILE: system/library/cart/cart.php
+CODE: $this->db->query("UPDATE " . DB_PREFIX . "cart SET quantity = (quantity + " . (int)$quantity . ") WHERE api_id = '" . (isset($this->session->data['api_id']) ? (int)$this->session->data['api_id'] : 0) . "' AND customer_id = '" . (int)$this->customer->getId() . "' AND session_id = '" . $this->db->escape($this->session->getId()) . "' AND product_id = '" . (int)$product_id . "' AND recurring_id = '" . (int)$recurring_id . "' AND `option` = '" . $this->db->escape(json_encode($option)) . "'");
+LINE: 278
+CODE: public function getWeight() {
+LINE: 378
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "cart WHERE cart_id = '" . (int)$cart_id . "' AND api_id = '" . (isset($this->session->data['api_id']) ? (int)$this->session->data['api_id'] : 0) . "' AND customer_id = '" . (int)$this->customer->getId() . "' AND session_id = '" . $this->db->escape($this->session->getId()) . "'");
+LINE: 288
+CODE: $this->db->query("UPDATE " . DB_PREFIX . "cart SET quantity = '" . (int)$quantity . "' WHERE cart_id = '" . (int)$cart_id . "' AND api_id = '" . (isset($this->session->data['api_id']) ? (int)$this->session->data['api_id'] : 0) . "' AND customer_id = '" . (int)$this->customer->getId() . "' AND session_id = '" . $this->db->escape($this->session->getId()) . "'");
+LINE: 284
+CODE: $this->weight = $registry->get('weight');
+LINE: 14
+CODE: $product_data[] = array(
+LINE: 241
+CODE: if ($product['tax_class_id']) {
+LINE: 411
+CODE: $total += $this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax')) * $product['quantity'];
+LINE: 432
+CODE: $product_id =  $cart['product_id'];
+LINE: 321
+CODE: $download_data = array();
+LINE: 219
+
+FILE: catalog/model/checkout/order.php
+CODE: $order_id = $this->db->getLastId();
+LINE: 21
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "order_product WHERE order_id = '" . (int)$order_id . "'");
+LINE: 84
+
+FILE: catalog/controller/checkout/cart.php
+CODE: $data['totals'] = array();
+LINE: 232
+
+FILE: catalog/view/theme/default/template/checkout/cart.tpl
+CODE: <?php if ($success) { ?>
+LINE: 32
+
+FILE: catalog/controller/checkout/checkout.php
+CODE: $data['shipping_required'] = $this->cart->hasShipping();
+LINE: 93
+
+FILE: catalog/view/theme/default/template/checkout/checkout.tpl
+CODE: <?php echo $content_top; ?>
+LINE: 28
+CODE: $total = $this->currency->format($unit_price * $product['quantity'], $this->session->data['currency']);
+LINE: 129
+
+FILE: catalog/controller/common/cart.php
+CODE: $total = $this->currency->format($unit_price * $product['quantity'], $this->session->data['currency']);
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/checkout/confirm.php
+CODE: $data['products'][] = array(
+LINE: 393
+CODE: 'total'      => $this->currency->format($this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax')) * $product['quantity'], $this->session->data['currency']),
+LINE: 403
+
+FILE: catalog/controller/product/product.php
+CODE: $data['points'] = $product_info['points'];
+LINE: 301
+
+FILE: catalog/view/theme/default/template/product/product.tpl
+CODE: <li class="active"><a href="#tab-description" data-toggle="tab"><?php echo $tab_description; ?></a></li>
+LINE: 50
+CODE: <div class="tab-pane active" id="tab-description"><?php echo $description; ?></div>
+LINE: 64
+
+FILE: catalog/view/theme/pav_ministore/template/product/product.tpl
+CODE: <li class="active"><a href="#tab-description" data-toggle="tab"><?php echo $tab_description; ?></a></li>
+NOT FOUND - OPERATIONS ABORTED!
+CODE: <ul class="nav nav-tabs">
+LINE: 53
+CODE: <ul class="nav nav-tabs">
+NOT FOUND - OPERATIONS ABORTED!
+----------------------------------------------------------------
+MOD: Sales Combination 1 : Buy x get y
+CODE: public function getWeight() {
+LINE: 459
+CODE: $this->sortcombination();
+LINE: 300
+LINE: 307
+LINE: 313
+
+FILE: catalog/model/extension/total/salescombo.php
+CODE: return $availableoffers;
+LINE: 40
+CODE: public function getAvailableOffers($product_id) {
+LINE: 67
+----------------------------------------------------------------
+MOD: Sales Combination 1b : Buy x get y
+CODE: public function getWeight() {
+LINE: 524
+CODE: $this->sortcombination();
+LINE: 300
+LINE: 308
+LINE: 315
+CODE: return $availableoffers;
+LINE: 72
+CODE: public function getAvailableOffers($product_id) {
+LINE: 100
+----------------------------------------------------------------
+MOD: Sales Combination 1c : Product Same Options Offer
+CODE: public function getWeight() {
+LINE: 651
+CODE: $this->sortcombination();
+LINE: 300
+LINE: 309
+LINE: 317
+CODE: return $availableoffers;
+LINE: 106
+CODE: public function getAvailableOffers($product_id) {
+LINE: 135
+----------------------------------------------------------------
+MOD: Sales Combination 1 : Buy x get y
+CODE: public function getWeight() {
+LINE: 713
+CODE: $this->sortcombination();
+LINE: 300
+LINE: 310
+LINE: 319
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "order_product WHERE order_id = '" . (int)$order_id . "'");
+LINE: 74
+CODE: return $availableoffers;
+LINE: 142
+CODE: public function getAvailableOffers($product_id) {
+LINE: 166
+
+FILE: admin/model/catalog/salescombopge.php
+CODE: public function createTable() {
+LINE: 315
+----------------------------------------------------------------
+MOD: Offer Pages Creator: Customized Html, Messages, Popup, Pages
+
+FILE: admin/language/arabi/common/menu.php
+CODE: $_['text_category']
+LINE: 12
+
+FILE: catalog/controller/common/header.php
+CODE: if (isset($this->request->get['route'])) {
+LINE: 196
+CODE: $data['base'] = $server;
+LINE: 50
+
+FILE: admin/controller/common/column_left.php
+CODE: if ($catalog) {
+LINE: 195
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: $_['text_zone']
+LINE: 86
+
+FILE: catalog/controller/product/category.php
+CODE: $data['categories'] = array();
+LINE: 172
+
+FILE: catalog/view/theme/default/template/product/category.tpl
+CODE: <?php if ($categories) { ?>
+LINE: 40
+CODE: <?php echo $footer; ?>
+LINE: 184
+CODE: <?php echo $footer; ?>
+LINE: 207
+
+FILE: catalog/view/theme/pav_ministore/template/product/category.tpl
+CODE: <?php if ($categories) { ?>
+NOT FOUND - OPERATIONS ABORTED!
+CODE: $data['discounts'] = array();
+LINE: 343
+CODE: <?php if ($price) { ?>
+LINE: 167
+CODE: <?php echo $footer; ?>
+LINE: 638
+CODE: <?php echo $footer; ?>
+LINE: 661
+CODE: <?php if ($price) { ?>
+LINE: 93
+CODE: <?php echo $footer; ?>
+LINE: 749
+CODE: <?php echo $footer; ?>
+LINE: 772
+
+FILE: catalog/controller/account/account.php
+CODE: $data['text_newsletter'] = $this->language->get('text_newsletter');
+LINE: 61
+
+FILE: catalog/view/theme/default/template/account/account.tpl
+CODE: <h2><?php echo $text_my_newsletter; ?></h2>
+LINE: 64
+
+FILE: catalog/controller/common/column_left.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 33
+
+FILE: catalog/controller/common/column_right.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 33
+
+FILE: catalog/controller/common/content_bottom.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 33
+
+FILE: catalog/controller/common/content_top.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 33
+
+FILE: catalog/controller/startup/seo_url.php
+CODE: if ($url[0] == 'manufacturer_id') {
+LINE: 41
+CODE: $this->request->get['route'] = $query->row['query'];
+LINE: 50
+CODE: } elseif (isset($this->request->get['manufacturer_id'])) {
+LINE: 72
+CODE: } elseif ($key == 'path') {
+LINE: 110
+----------------------------------------------------------------
+2017-11-06 18:48:29 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+----------------------------------------------------------------
+MOD: comrooles
+
+FILE: system/library/cart/cart.php
+CODE: $this->db->query("UPDATE " . DB_PREFIX . "cart SET quantity = (quantity + " . (int)$quantity . ") WHERE api_id = '" . (isset($this->session->data['api_id']) ? (int)$this->session->data['api_id'] : 0) . "' AND customer_id = '" . (int)$this->customer->getId() . "' AND session_id = '" . $this->db->escape($this->session->getId()) . "' AND product_id = '" . (int)$product_id . "' AND recurring_id = '" . (int)$recurring_id . "' AND `option` = '" . $this->db->escape(json_encode($option)) . "'");
+LINE: 278
+CODE: public function getWeight() {
+LINE: 378
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "cart WHERE cart_id = '" . (int)$cart_id . "' AND api_id = '" . (isset($this->session->data['api_id']) ? (int)$this->session->data['api_id'] : 0) . "' AND customer_id = '" . (int)$this->customer->getId() . "' AND session_id = '" . $this->db->escape($this->session->getId()) . "'");
+LINE: 288
+CODE: $this->db->query("UPDATE " . DB_PREFIX . "cart SET quantity = '" . (int)$quantity . "' WHERE cart_id = '" . (int)$cart_id . "' AND api_id = '" . (isset($this->session->data['api_id']) ? (int)$this->session->data['api_id'] : 0) . "' AND customer_id = '" . (int)$this->customer->getId() . "' AND session_id = '" . $this->db->escape($this->session->getId()) . "'");
+LINE: 284
+CODE: $this->weight = $registry->get('weight');
+LINE: 14
+CODE: $product_data[] = array(
+LINE: 241
+CODE: if ($product['tax_class_id']) {
+LINE: 411
+CODE: $total += $this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax')) * $product['quantity'];
+LINE: 432
+CODE: $product_id =  $cart['product_id'];
+LINE: 321
+CODE: $download_data = array();
+LINE: 219
+
+FILE: catalog/model/checkout/order.php
+CODE: $order_id = $this->db->getLastId();
+LINE: 21
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "order_product WHERE order_id = '" . (int)$order_id . "'");
+LINE: 84
+
+FILE: catalog/controller/checkout/cart.php
+CODE: $data['totals'] = array();
+LINE: 232
+
+FILE: catalog/view/theme/default/template/checkout/cart.tpl
+CODE: <?php if ($success) { ?>
+LINE: 32
+
+FILE: catalog/controller/checkout/checkout.php
+CODE: $data['shipping_required'] = $this->cart->hasShipping();
+LINE: 93
+
+FILE: catalog/view/theme/default/template/checkout/checkout.tpl
+CODE: <?php echo $content_top; ?>
+LINE: 28
+CODE: $total = $this->currency->format($unit_price * $product['quantity'], $this->session->data['currency']);
+LINE: 129
+
+FILE: catalog/controller/common/cart.php
+CODE: $total = $this->currency->format($unit_price * $product['quantity'], $this->session->data['currency']);
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/checkout/confirm.php
+CODE: $data['products'][] = array(
+LINE: 393
+CODE: 'total'      => $this->currency->format($this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax')) * $product['quantity'], $this->session->data['currency']),
+LINE: 403
+
+FILE: catalog/controller/product/product.php
+CODE: $data['points'] = $product_info['points'];
+LINE: 301
+
+FILE: catalog/view/theme/default/template/product/product.tpl
+CODE: <li class="active"><a href="#tab-description" data-toggle="tab"><?php echo $tab_description; ?></a></li>
+LINE: 50
+CODE: <div class="tab-pane active" id="tab-description"><?php echo $description; ?></div>
+LINE: 64
+
+FILE: catalog/view/theme/pav_ministore/template/product/product.tpl
+CODE: <li class="active"><a href="#tab-description" data-toggle="tab"><?php echo $tab_description; ?></a></li>
+NOT FOUND - OPERATIONS ABORTED!
+CODE: <ul class="nav nav-tabs">
+LINE: 53
+CODE: <ul class="nav nav-tabs">
+NOT FOUND - OPERATIONS ABORTED!
+----------------------------------------------------------------
+MOD: Sales Combination 1 : Buy x get y
+CODE: public function getWeight() {
+LINE: 459
+CODE: $this->sortcombination();
+LINE: 300
+LINE: 307
+LINE: 313
+
+FILE: catalog/model/extension/total/salescombo.php
+CODE: return $availableoffers;
+LINE: 40
+CODE: public function getAvailableOffers($product_id) {
+LINE: 67
+----------------------------------------------------------------
+MOD: Sales Combination 1b : Buy x get y
+CODE: public function getWeight() {
+LINE: 524
+CODE: $this->sortcombination();
+LINE: 300
+LINE: 308
+LINE: 315
+CODE: return $availableoffers;
+LINE: 72
+CODE: public function getAvailableOffers($product_id) {
+LINE: 100
+----------------------------------------------------------------
+MOD: Sales Combination 1c : Product Same Options Offer
+CODE: public function getWeight() {
+LINE: 651
+CODE: $this->sortcombination();
+LINE: 300
+LINE: 309
+LINE: 317
+CODE: return $availableoffers;
+LINE: 106
+CODE: public function getAvailableOffers($product_id) {
+LINE: 135
+----------------------------------------------------------------
+MOD: Sales Combination 1 : Buy x get y
+CODE: public function getWeight() {
+LINE: 713
+CODE: $this->sortcombination();
+LINE: 300
+LINE: 310
+LINE: 319
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "order_product WHERE order_id = '" . (int)$order_id . "'");
+LINE: 74
+CODE: return $availableoffers;
+LINE: 142
+CODE: public function getAvailableOffers($product_id) {
+LINE: 166
+
+FILE: admin/model/catalog/salescombopge.php
+CODE: public function createTable() {
+LINE: 315
+----------------------------------------------------------------
+MOD: Offer Pages Creator: Customized Html, Messages, Popup, Pages
+
+FILE: admin/language/arabi/common/menu.php
+CODE: $_['text_category']
+LINE: 12
+
+FILE: catalog/controller/common/header.php
+CODE: if (isset($this->request->get['route'])) {
+LINE: 196
+CODE: $data['base'] = $server;
+LINE: 50
+
+FILE: admin/controller/common/column_left.php
+CODE: if ($catalog) {
+LINE: 195
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: $_['text_zone']
+LINE: 86
+
+FILE: catalog/controller/product/category.php
+CODE: $data['categories'] = array();
+LINE: 172
+
+FILE: catalog/view/theme/default/template/product/category.tpl
+CODE: <?php if ($categories) { ?>
+LINE: 40
+CODE: <?php echo $footer; ?>
+LINE: 184
+CODE: <?php echo $footer; ?>
+LINE: 207
+
+FILE: catalog/view/theme/pav_ministore/template/product/category.tpl
+CODE: <?php if ($categories) { ?>
+NOT FOUND - OPERATIONS ABORTED!
+CODE: $data['discounts'] = array();
+LINE: 343
+CODE: <?php if ($price) { ?>
+LINE: 167
+CODE: <?php echo $footer; ?>
+LINE: 638
+CODE: <?php echo $footer; ?>
+LINE: 661
+CODE: <?php if ($price) { ?>
+LINE: 93
+CODE: <?php echo $footer; ?>
+LINE: 749
+CODE: <?php echo $footer; ?>
+LINE: 772
+
+FILE: catalog/controller/account/account.php
+CODE: $data['text_newsletter'] = $this->language->get('text_newsletter');
+LINE: 61
+
+FILE: catalog/view/theme/default/template/account/account.tpl
+CODE: <h2><?php echo $text_my_newsletter; ?></h2>
+LINE: 64
+
+FILE: catalog/controller/common/column_left.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 33
+
+FILE: catalog/controller/common/column_right.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 33
+
+FILE: catalog/controller/common/content_bottom.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 33
+
+FILE: catalog/controller/common/content_top.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 33
+
+FILE: catalog/controller/startup/seo_url.php
+CODE: if ($url[0] == 'manufacturer_id') {
+LINE: 41
+CODE: $this->request->get['route'] = $query->row['query'];
+LINE: 50
+CODE: } elseif (isset($this->request->get['manufacturer_id'])) {
+LINE: 72
+CODE: } elseif ($key == 'path') {
+LINE: 110
+----------------------------------------------------------------
+2017-11-10 19:19:12 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+----------------------------------------------------------------
+MOD: comrooles
+
+FILE: system/library/cart/cart.php
+CODE: $this->db->query("UPDATE " . DB_PREFIX . "cart SET quantity = (quantity + " . (int)$quantity . ") WHERE api_id = '" . (isset($this->session->data['api_id']) ? (int)$this->session->data['api_id'] : 0) . "' AND customer_id = '" . (int)$this->customer->getId() . "' AND session_id = '" . $this->db->escape($this->session->getId()) . "' AND product_id = '" . (int)$product_id . "' AND recurring_id = '" . (int)$recurring_id . "' AND `option` = '" . $this->db->escape(json_encode($option)) . "'");
+LINE: 278
+CODE: public function getWeight() {
+LINE: 378
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "cart WHERE cart_id = '" . (int)$cart_id . "' AND api_id = '" . (isset($this->session->data['api_id']) ? (int)$this->session->data['api_id'] : 0) . "' AND customer_id = '" . (int)$this->customer->getId() . "' AND session_id = '" . $this->db->escape($this->session->getId()) . "'");
+LINE: 288
+CODE: $this->db->query("UPDATE " . DB_PREFIX . "cart SET quantity = '" . (int)$quantity . "' WHERE cart_id = '" . (int)$cart_id . "' AND api_id = '" . (isset($this->session->data['api_id']) ? (int)$this->session->data['api_id'] : 0) . "' AND customer_id = '" . (int)$this->customer->getId() . "' AND session_id = '" . $this->db->escape($this->session->getId()) . "'");
+LINE: 284
+CODE: $this->weight = $registry->get('weight');
+LINE: 14
+CODE: $product_data[] = array(
+LINE: 241
+CODE: if ($product['tax_class_id']) {
+LINE: 411
+CODE: $total += $this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax')) * $product['quantity'];
+LINE: 432
+CODE: $product_id =  $cart['product_id'];
+LINE: 321
+CODE: $download_data = array();
+LINE: 219
+
+FILE: catalog/model/checkout/order.php
+CODE: $order_id = $this->db->getLastId();
+LINE: 21
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "order_product WHERE order_id = '" . (int)$order_id . "'");
+LINE: 84
+
+FILE: catalog/controller/checkout/cart.php
+CODE: $data['totals'] = array();
+LINE: 232
+
+FILE: catalog/view/theme/default/template/checkout/cart.tpl
+CODE: <?php if ($success) { ?>
+LINE: 32
+
+FILE: catalog/controller/checkout/checkout.php
+CODE: $data['shipping_required'] = $this->cart->hasShipping();
+LINE: 93
+
+FILE: catalog/view/theme/default/template/checkout/checkout.tpl
+CODE: <?php echo $content_top; ?>
+LINE: 28
+CODE: $total = $this->currency->format($unit_price * $product['quantity'], $this->session->data['currency']);
+LINE: 129
+
+FILE: catalog/controller/common/cart.php
+CODE: $total = $this->currency->format($unit_price * $product['quantity'], $this->session->data['currency']);
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/checkout/confirm.php
+CODE: $data['products'][] = array(
+LINE: 393
+CODE: 'total'      => $this->currency->format($this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax')) * $product['quantity'], $this->session->data['currency']),
+LINE: 403
+
+FILE: catalog/controller/product/product.php
+CODE: $data['points'] = $product_info['points'];
+LINE: 301
+
+FILE: catalog/view/theme/default/template/product/product.tpl
+CODE: <li class="active"><a href="#tab-description" data-toggle="tab"><?php echo $tab_description; ?></a></li>
+LINE: 50
+CODE: <div class="tab-pane active" id="tab-description"><?php echo $description; ?></div>
+LINE: 64
+
+FILE: catalog/view/theme/pav_ministore/template/product/product.tpl
+CODE: <li class="active"><a href="#tab-description" data-toggle="tab"><?php echo $tab_description; ?></a></li>
+NOT FOUND - OPERATIONS ABORTED!
+CODE: <ul class="nav nav-tabs">
+LINE: 53
+CODE: <ul class="nav nav-tabs">
+NOT FOUND - OPERATIONS ABORTED!
+----------------------------------------------------------------
+MOD: Sales Combination 1 : Buy x get y
+CODE: public function getWeight() {
+LINE: 459
+CODE: $this->sortcombination();
+LINE: 300
+LINE: 307
+LINE: 313
+
+FILE: catalog/model/extension/total/salescombo.php
+CODE: return $availableoffers;
+LINE: 40
+CODE: public function getAvailableOffers($product_id) {
+LINE: 67
+----------------------------------------------------------------
+MOD: Sales Combination 1b : Buy x get y
+CODE: public function getWeight() {
+LINE: 524
+CODE: $this->sortcombination();
+LINE: 300
+LINE: 308
+LINE: 315
+CODE: return $availableoffers;
+LINE: 72
+CODE: public function getAvailableOffers($product_id) {
+LINE: 100
+----------------------------------------------------------------
+MOD: Sales Combination 1c : Product Same Options Offer
+CODE: public function getWeight() {
+LINE: 651
+CODE: $this->sortcombination();
+LINE: 300
+LINE: 309
+LINE: 317
+CODE: return $availableoffers;
+LINE: 106
+CODE: public function getAvailableOffers($product_id) {
+LINE: 135
+----------------------------------------------------------------
+MOD: Sales Combination 1 : Buy x get y
+CODE: public function getWeight() {
+LINE: 713
+CODE: $this->sortcombination();
+LINE: 300
+LINE: 310
+LINE: 319
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "order_product WHERE order_id = '" . (int)$order_id . "'");
+LINE: 74
+CODE: return $availableoffers;
+LINE: 142
+CODE: public function getAvailableOffers($product_id) {
+LINE: 166
+
+FILE: admin/model/catalog/salescombopge.php
+CODE: public function createTable() {
+LINE: 315
+----------------------------------------------------------------
+MOD: Buy x and get y from category
+CODE: public function getWeight() {
+LINE: 812
+CODE: $this->sortcombination();
+LINE: 300
+LINE: 311
+LINE: 321
+----------------------------------------------------------------
+MOD: Sales Combination 2 : Buy x from category get y
+CODE: public function getWeight() {
+LINE: 891
+CODE: $this->sortcombination();
+LINE: 300
+LINE: 312
+LINE: 323
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "order_product WHERE order_id = '" . (int)$order_id . "'");
+LINE: 78
+CODE: public function createTable() {
+LINE: 315
+----------------------------------------------------------------
+MOD: Offer Pages Creator: Customized Html, Messages, Popup, Pages
+
+FILE: admin/language/arabi/common/menu.php
+CODE: $_['text_category']
+LINE: 12
+
+FILE: catalog/controller/common/header.php
+CODE: if (isset($this->request->get['route'])) {
+LINE: 196
+CODE: $data['base'] = $server;
+LINE: 50
+
+FILE: admin/controller/common/column_left.php
+CODE: if ($catalog) {
+LINE: 195
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: $_['text_zone']
+LINE: 86
+
+FILE: catalog/controller/product/category.php
+CODE: $data['categories'] = array();
+LINE: 172
+
+FILE: catalog/view/theme/default/template/product/category.tpl
+CODE: <?php if ($categories) { ?>
+LINE: 40
+CODE: <?php echo $footer; ?>
+LINE: 184
+CODE: <?php echo $footer; ?>
+LINE: 207
+
+FILE: catalog/view/theme/pav_ministore/template/product/category.tpl
+CODE: <?php if ($categories) { ?>
+NOT FOUND - OPERATIONS ABORTED!
+CODE: $data['discounts'] = array();
+LINE: 343
+CODE: <?php if ($price) { ?>
+LINE: 167
+CODE: <?php echo $footer; ?>
+LINE: 638
+CODE: <?php echo $footer; ?>
+LINE: 661
+CODE: <?php if ($price) { ?>
+LINE: 93
+CODE: <?php echo $footer; ?>
+LINE: 752
+CODE: <?php echo $footer; ?>
+LINE: 775
+
+FILE: catalog/controller/account/account.php
+CODE: $data['text_newsletter'] = $this->language->get('text_newsletter');
+LINE: 61
+
+FILE: catalog/view/theme/default/template/account/account.tpl
+CODE: <h2><?php echo $text_my_newsletter; ?></h2>
+LINE: 64
+
+FILE: catalog/controller/common/column_left.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 33
+
+FILE: catalog/controller/common/column_right.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 33
+
+FILE: catalog/controller/common/content_bottom.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 33
+
+FILE: catalog/controller/common/content_top.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 33
+
+FILE: catalog/controller/startup/seo_url.php
+CODE: if ($url[0] == 'manufacturer_id') {
+LINE: 41
+CODE: $this->request->get['route'] = $query->row['query'];
+LINE: 50
+CODE: } elseif (isset($this->request->get['manufacturer_id'])) {
+LINE: 72
+CODE: } elseif ($key == 'path') {
+LINE: 110
+----------------------------------------------------------------
+2017-11-10 22:53:58 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+----------------------------------------------------------------
+MOD: comrooles
+
+FILE: system/library/cart/cart.php
+CODE: $this->db->query("UPDATE " . DB_PREFIX . "cart SET quantity = (quantity + " . (int)$quantity . ") WHERE api_id = '" . (isset($this->session->data['api_id']) ? (int)$this->session->data['api_id'] : 0) . "' AND customer_id = '" . (int)$this->customer->getId() . "' AND session_id = '" . $this->db->escape($this->session->getId()) . "' AND product_id = '" . (int)$product_id . "' AND recurring_id = '" . (int)$recurring_id . "' AND `option` = '" . $this->db->escape(json_encode($option)) . "'");
+LINE: 278
+CODE: public function getWeight() {
+LINE: 378
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "cart WHERE cart_id = '" . (int)$cart_id . "' AND api_id = '" . (isset($this->session->data['api_id']) ? (int)$this->session->data['api_id'] : 0) . "' AND customer_id = '" . (int)$this->customer->getId() . "' AND session_id = '" . $this->db->escape($this->session->getId()) . "'");
+LINE: 288
+CODE: $this->db->query("UPDATE " . DB_PREFIX . "cart SET quantity = '" . (int)$quantity . "' WHERE cart_id = '" . (int)$cart_id . "' AND api_id = '" . (isset($this->session->data['api_id']) ? (int)$this->session->data['api_id'] : 0) . "' AND customer_id = '" . (int)$this->customer->getId() . "' AND session_id = '" . $this->db->escape($this->session->getId()) . "'");
+LINE: 284
+CODE: $this->weight = $registry->get('weight');
+LINE: 14
+CODE: $product_data[] = array(
+LINE: 241
+CODE: if ($product['tax_class_id']) {
+LINE: 411
+CODE: $total += $this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax')) * $product['quantity'];
+LINE: 432
+CODE: $product_id =  $cart['product_id'];
+LINE: 321
+CODE: $download_data = array();
+LINE: 219
+
+FILE: catalog/model/checkout/order.php
+CODE: $order_id = $this->db->getLastId();
+LINE: 21
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "order_product WHERE order_id = '" . (int)$order_id . "'");
+LINE: 84
+
+FILE: catalog/controller/checkout/cart.php
+CODE: $data['totals'] = array();
+LINE: 232
+
+FILE: catalog/view/theme/default/template/checkout/cart.tpl
+CODE: <?php if ($success) { ?>
+LINE: 32
+
+FILE: catalog/controller/checkout/checkout.php
+CODE: $data['shipping_required'] = $this->cart->hasShipping();
+LINE: 93
+
+FILE: catalog/view/theme/default/template/checkout/checkout.tpl
+CODE: <?php echo $content_top; ?>
+LINE: 28
+CODE: $total = $this->currency->format($unit_price * $product['quantity'], $this->session->data['currency']);
+LINE: 129
+
+FILE: catalog/controller/common/cart.php
+CODE: $total = $this->currency->format($unit_price * $product['quantity'], $this->session->data['currency']);
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/checkout/confirm.php
+CODE: $data['products'][] = array(
+LINE: 393
+CODE: 'total'      => $this->currency->format($this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax')) * $product['quantity'], $this->session->data['currency']),
+LINE: 403
+
+FILE: catalog/controller/product/product.php
+CODE: $data['points'] = $product_info['points'];
+LINE: 301
+
+FILE: catalog/view/theme/default/template/product/product.tpl
+CODE: <li class="active"><a href="#tab-description" data-toggle="tab"><?php echo $tab_description; ?></a></li>
+LINE: 50
+CODE: <div class="tab-pane active" id="tab-description"><?php echo $description; ?></div>
+LINE: 64
+
+FILE: catalog/view/theme/pav_ministore/template/product/product.tpl
+CODE: <li class="active"><a href="#tab-description" data-toggle="tab"><?php echo $tab_description; ?></a></li>
+NOT FOUND - OPERATIONS ABORTED!
+CODE: <ul class="nav nav-tabs">
+LINE: 53
+CODE: <ul class="nav nav-tabs">
+NOT FOUND - OPERATIONS ABORTED!
+----------------------------------------------------------------
+MOD: Sales Combination 1 : Buy x get y
+CODE: public function getWeight() {
+LINE: 459
+CODE: $this->sortcombination();
+LINE: 300
+LINE: 307
+LINE: 313
+
+FILE: catalog/model/extension/total/salescombo.php
+CODE: return $availableoffers;
+LINE: 40
+CODE: public function getAvailableOffers($product_id) {
+LINE: 67
+----------------------------------------------------------------
+MOD: Sales Combination 1b : Buy x get y
+CODE: public function getWeight() {
+LINE: 524
+CODE: $this->sortcombination();
+LINE: 300
+LINE: 308
+LINE: 315
+CODE: return $availableoffers;
+LINE: 72
+CODE: public function getAvailableOffers($product_id) {
+LINE: 100
+----------------------------------------------------------------
+MOD: Sales Combination 1c : Product Same Options Offer
+CODE: public function getWeight() {
+LINE: 651
+CODE: $this->sortcombination();
+LINE: 300
+LINE: 309
+LINE: 317
+CODE: return $availableoffers;
+LINE: 106
+CODE: public function getAvailableOffers($product_id) {
+LINE: 135
+----------------------------------------------------------------
+MOD: Sales Combination 1 : Buy x get y
+CODE: public function getWeight() {
+LINE: 713
+CODE: $this->sortcombination();
+LINE: 300
+LINE: 310
+LINE: 319
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "order_product WHERE order_id = '" . (int)$order_id . "'");
+LINE: 74
+CODE: return $availableoffers;
+LINE: 142
+CODE: public function getAvailableOffers($product_id) {
+LINE: 166
+
+FILE: admin/model/catalog/salescombopge.php
+CODE: public function createTable() {
+LINE: 315
+----------------------------------------------------------------
+MOD: Buy x and get y from category
+CODE: public function getWeight() {
+LINE: 819
+CODE: $this->sortcombination();
+LINE: 300
+LINE: 311
+LINE: 321
+----------------------------------------------------------------
+MOD: Sales Combination 2 : Buy x from category get y
+CODE: public function getWeight() {
+LINE: 898
+CODE: $this->sortcombination();
+LINE: 300
+LINE: 312
+LINE: 323
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "order_product WHERE order_id = '" . (int)$order_id . "'");
+LINE: 78
+CODE: public function createTable() {
+LINE: 315
+----------------------------------------------------------------
+MOD: Offer Pages Creator: Customized Html, Messages, Popup, Pages
+
+FILE: admin/language/arabi/common/menu.php
+CODE: $_['text_category']
+LINE: 12
+
+FILE: catalog/controller/common/header.php
+CODE: if (isset($this->request->get['route'])) {
+LINE: 196
+CODE: $data['base'] = $server;
+LINE: 50
+
+FILE: admin/controller/common/column_left.php
+CODE: if ($catalog) {
+LINE: 195
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: $_['text_zone']
+LINE: 86
+
+FILE: catalog/controller/product/category.php
+CODE: $data['categories'] = array();
+LINE: 172
+
+FILE: catalog/view/theme/default/template/product/category.tpl
+CODE: <?php if ($categories) { ?>
+LINE: 40
+CODE: <?php echo $footer; ?>
+LINE: 184
+CODE: <?php echo $footer; ?>
+LINE: 207
+
+FILE: catalog/view/theme/pav_ministore/template/product/category.tpl
+CODE: <?php if ($categories) { ?>
+NOT FOUND - OPERATIONS ABORTED!
+CODE: $data['discounts'] = array();
+LINE: 343
+CODE: <?php if ($price) { ?>
+LINE: 167
+CODE: <?php echo $footer; ?>
+LINE: 638
+CODE: <?php echo $footer; ?>
+LINE: 661
+CODE: <?php if ($price) { ?>
+LINE: 93
+CODE: <?php echo $footer; ?>
+LINE: 752
+CODE: <?php echo $footer; ?>
+LINE: 775
+
+FILE: catalog/controller/account/account.php
+CODE: $data['text_newsletter'] = $this->language->get('text_newsletter');
+LINE: 61
+
+FILE: catalog/view/theme/default/template/account/account.tpl
+CODE: <h2><?php echo $text_my_newsletter; ?></h2>
+LINE: 64
+
+FILE: catalog/controller/common/column_left.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 33
+
+FILE: catalog/controller/common/column_right.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 33
+
+FILE: catalog/controller/common/content_bottom.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 33
+
+FILE: catalog/controller/common/content_top.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 33
+
+FILE: catalog/controller/startup/seo_url.php
+CODE: if ($url[0] == 'manufacturer_id') {
+LINE: 41
+CODE: $this->request->get['route'] = $query->row['query'];
+LINE: 50
+CODE: } elseif (isset($this->request->get['manufacturer_id'])) {
+LINE: 72
+CODE: } elseif ($key == 'path') {
+LINE: 110
+----------------------------------------------------------------
+2017-11-22 14:39:24 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+----------------------------------------------------------------
+MOD: comrooles
+
+FILE: system/library/cart/cart.php
+CODE: $this->db->query("UPDATE " . DB_PREFIX . "cart SET quantity = (quantity + " . (int)$quantity . ") WHERE api_id = '" . (isset($this->session->data['api_id']) ? (int)$this->session->data['api_id'] : 0) . "' AND customer_id = '" . (int)$this->customer->getId() . "' AND session_id = '" . $this->db->escape($this->session->getId()) . "' AND product_id = '" . (int)$product_id . "' AND recurring_id = '" . (int)$recurring_id . "' AND `option` = '" . $this->db->escape(json_encode($option)) . "'");
+LINE: 278
+CODE: public function getWeight() {
+LINE: 378
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "cart WHERE cart_id = '" . (int)$cart_id . "' AND api_id = '" . (isset($this->session->data['api_id']) ? (int)$this->session->data['api_id'] : 0) . "' AND customer_id = '" . (int)$this->customer->getId() . "' AND session_id = '" . $this->db->escape($this->session->getId()) . "'");
+LINE: 288
+CODE: $this->db->query("UPDATE " . DB_PREFIX . "cart SET quantity = '" . (int)$quantity . "' WHERE cart_id = '" . (int)$cart_id . "' AND api_id = '" . (isset($this->session->data['api_id']) ? (int)$this->session->data['api_id'] : 0) . "' AND customer_id = '" . (int)$this->customer->getId() . "' AND session_id = '" . $this->db->escape($this->session->getId()) . "'");
+LINE: 284
+CODE: $this->weight = $registry->get('weight');
+LINE: 14
+CODE: $product_data[] = array(
+LINE: 241
+CODE: if ($product['tax_class_id']) {
+LINE: 411
+CODE: $total += $this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax')) * $product['quantity'];
+LINE: 432
+CODE: $product_id =  $cart['product_id'];
+LINE: 321
+CODE: $download_data = array();
+LINE: 219
+
+FILE: catalog/model/checkout/order.php
+CODE: $order_id = $this->db->getLastId();
+LINE: 21
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "order_product WHERE order_id = '" . (int)$order_id . "'");
+LINE: 84
+
+FILE: catalog/controller/checkout/cart.php
+CODE: $data['totals'] = array();
+LINE: 232
+
+FILE: catalog/view/theme/default/template/checkout/cart.tpl
+CODE: <?php if ($success) { ?>
+LINE: 32
+
+FILE: catalog/controller/checkout/checkout.php
+CODE: $data['shipping_required'] = $this->cart->hasShipping();
+LINE: 93
+
+FILE: catalog/view/theme/default/template/checkout/checkout.tpl
+CODE: <?php echo $content_top; ?>
+LINE: 28
+CODE: $total = $this->currency->format($unit_price * $product['quantity'], $this->session->data['currency']);
+LINE: 129
+
+FILE: catalog/controller/common/cart.php
+CODE: $total = $this->currency->format($unit_price * $product['quantity'], $this->session->data['currency']);
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/checkout/confirm.php
+CODE: $data['products'][] = array(
+LINE: 393
+CODE: 'total'      => $this->currency->format($this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax')) * $product['quantity'], $this->session->data['currency']),
+LINE: 403
+
+FILE: catalog/controller/product/product.php
+CODE: $data['points'] = $product_info['points'];
+LINE: 301
+
+FILE: catalog/view/theme/default/template/product/product.tpl
+CODE: <li class="active"><a href="#tab-description" data-toggle="tab"><?php echo $tab_description; ?></a></li>
+LINE: 50
+CODE: <div class="tab-pane active" id="tab-description"><?php echo $description; ?></div>
+LINE: 64
+
+FILE: catalog/view/theme/pav_ministore/template/product/product.tpl
+CODE: <li class="active"><a href="#tab-description" data-toggle="tab"><?php echo $tab_description; ?></a></li>
+NOT FOUND - OPERATIONS ABORTED!
+CODE: <ul class="nav nav-tabs">
+LINE: 53
+CODE: <ul class="nav nav-tabs">
+NOT FOUND - OPERATIONS ABORTED!
+----------------------------------------------------------------
+MOD: Sales Combination 1 : Buy x get y
+CODE: public function getWeight() {
+LINE: 459
+CODE: $this->sortcombination();
+LINE: 300
+LINE: 307
+LINE: 313
+
+FILE: catalog/model/extension/total/salescombo.php
+CODE: return $availableoffers;
+LINE: 40
+CODE: public function getAvailableOffers($product_id) {
+LINE: 67
+----------------------------------------------------------------
+MOD: Sales Combination 1b : Buy x get y
+CODE: public function getWeight() {
+LINE: 524
+CODE: $this->sortcombination();
+LINE: 300
+LINE: 308
+LINE: 315
+CODE: return $availableoffers;
+LINE: 72
+CODE: public function getAvailableOffers($product_id) {
+LINE: 100
+----------------------------------------------------------------
+MOD: Sales Combination 1c : Product Same Options Offer
+CODE: public function getWeight() {
+LINE: 651
+CODE: $this->sortcombination();
+LINE: 300
+LINE: 309
+LINE: 317
+CODE: return $availableoffers;
+LINE: 106
+CODE: public function getAvailableOffers($product_id) {
+LINE: 135
+----------------------------------------------------------------
+MOD: Sales Combination 1 : Buy x get y
+CODE: public function getWeight() {
+LINE: 713
+CODE: $this->sortcombination();
+LINE: 300
+LINE: 310
+LINE: 319
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "order_product WHERE order_id = '" . (int)$order_id . "'");
+LINE: 74
+CODE: return $availableoffers;
+LINE: 142
+CODE: public function getAvailableOffers($product_id) {
+LINE: 166
+
+FILE: admin/model/catalog/salescombopge.php
+CODE: public function createTable() {
+LINE: 315
+----------------------------------------------------------------
+MOD: Buy x and get y from category
+CODE: public function getWeight() {
+LINE: 819
+CODE: $this->sortcombination();
+LINE: 300
+LINE: 311
+LINE: 321
+----------------------------------------------------------------
+MOD: Sales Combination 2 : Buy x from category get y
+CODE: public function getWeight() {
+LINE: 898
+CODE: $this->sortcombination();
+LINE: 300
+LINE: 312
+LINE: 323
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "order_product WHERE order_id = '" . (int)$order_id . "'");
+LINE: 78
+CODE: public function createTable() {
+LINE: 315
+----------------------------------------------------------------
+MOD: Installation without FTP settings
+
+FILE: admin/controller/extension/installer.php
+CODE: $data['button_continue'] =
+LINE: 37
+CODE: 'extension/installer/ftp'
+LINE: 136
+CODE: function ftp(
+LINE: 301
+CODE: if (!$this->config->get('config_ftp_status')
+LINE: 319
+
+FILE: admin/language/en-gb/extension/installer.php
+CODE: $_['text_clear']
+LINE: 17
+
+FILE: admin/view/template/extension/installer.tpl
+CODE: <form class="form
+LINE: 34
+CODE: timer = setInterval(
+LINE: 87
+CODE: n next()
+LINE: 156
+CODE: 'path=' + data.path
+LINE: 167
+----------------------------------------------------------------
+MOD: Offer Pages Creator: Customized Html, Messages, Popup, Pages
+
+FILE: admin/language/arabi/common/menu.php
+CODE: $_['text_category']
+LINE: 12
+
+FILE: catalog/controller/common/header.php
+CODE: if (isset($this->request->get['route'])) {
+LINE: 196
+CODE: $data['base'] = $server;
+LINE: 50
+
+FILE: admin/controller/common/column_left.php
+CODE: if ($catalog) {
+LINE: 195
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: $_['text_zone']
+LINE: 86
+
+FILE: catalog/controller/product/category.php
+CODE: $data['categories'] = array();
+LINE: 172
+
+FILE: catalog/view/theme/default/template/product/category.tpl
+CODE: <?php if ($categories) { ?>
+LINE: 40
+CODE: <?php echo $footer; ?>
+LINE: 184
+CODE: <?php echo $footer; ?>
+LINE: 207
+
+FILE: catalog/view/theme/pav_ministore/template/product/category.tpl
+CODE: <?php if ($categories) { ?>
+NOT FOUND - OPERATIONS ABORTED!
+CODE: $data['discounts'] = array();
+LINE: 343
+CODE: <?php if ($price) { ?>
+LINE: 167
+CODE: <?php echo $footer; ?>
+LINE: 638
+CODE: <?php echo $footer; ?>
+LINE: 661
+CODE: <?php if ($price) { ?>
+LINE: 93
+CODE: <?php echo $footer; ?>
+LINE: 762
+CODE: <?php echo $footer; ?>
+LINE: 785
+
+FILE: catalog/controller/account/account.php
+CODE: $data['text_newsletter'] = $this->language->get('text_newsletter');
+LINE: 61
+
+FILE: catalog/view/theme/default/template/account/account.tpl
+CODE: <h2><?php echo $text_my_newsletter; ?></h2>
+LINE: 64
+
+FILE: catalog/controller/common/column_left.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 33
+
+FILE: catalog/controller/common/column_right.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 33
+
+FILE: catalog/controller/common/content_bottom.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 33
+
+FILE: catalog/controller/common/content_top.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 33
+
+FILE: catalog/controller/startup/seo_url.php
+CODE: if ($url[0] == 'manufacturer_id') {
+LINE: 41
+CODE: $this->request->get['route'] = $query->row['query'];
+LINE: 50
+CODE: } elseif (isset($this->request->get['manufacturer_id'])) {
+LINE: 72
+CODE: } elseif ($key == 'path') {
+LINE: 110
+----------------------------------------------------------------
+2017-11-22 14:40:09 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+
+FILE: system/library/template/twig.php
+NOT FOUND - OPERATIONS ABORTED!
+----------------------------------------------------------------
+MOD: comrooles
+
+FILE: system/library/cart/cart.php
+CODE: $this->db->query("UPDATE " . DB_PREFIX . "cart SET quantity = (quantity + " . (int)$quantity . ") WHERE api_id = '" . (isset($this->session->data['api_id']) ? (int)$this->session->data['api_id'] : 0) . "' AND customer_id = '" . (int)$this->customer->getId() . "' AND session_id = '" . $this->db->escape($this->session->getId()) . "' AND product_id = '" . (int)$product_id . "' AND recurring_id = '" . (int)$recurring_id . "' AND `option` = '" . $this->db->escape(json_encode($option)) . "'");
+LINE: 278
+CODE: public function getWeight() {
+LINE: 378
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "cart WHERE cart_id = '" . (int)$cart_id . "' AND api_id = '" . (isset($this->session->data['api_id']) ? (int)$this->session->data['api_id'] : 0) . "' AND customer_id = '" . (int)$this->customer->getId() . "' AND session_id = '" . $this->db->escape($this->session->getId()) . "'");
+LINE: 288
+CODE: $this->db->query("UPDATE " . DB_PREFIX . "cart SET quantity = '" . (int)$quantity . "' WHERE cart_id = '" . (int)$cart_id . "' AND api_id = '" . (isset($this->session->data['api_id']) ? (int)$this->session->data['api_id'] : 0) . "' AND customer_id = '" . (int)$this->customer->getId() . "' AND session_id = '" . $this->db->escape($this->session->getId()) . "'");
+LINE: 284
+CODE: $this->weight = $registry->get('weight');
+LINE: 14
+CODE: $product_data[] = array(
+LINE: 241
+CODE: if ($product['tax_class_id']) {
+LINE: 411
+CODE: $total += $this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax')) * $product['quantity'];
+LINE: 432
+CODE: $product_id =  $cart['product_id'];
+LINE: 321
+CODE: $download_data = array();
+LINE: 219
+
+FILE: catalog/model/checkout/order.php
+CODE: $order_id = $this->db->getLastId();
+LINE: 21
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "order_product WHERE order_id = '" . (int)$order_id . "'");
+LINE: 84
+
+FILE: catalog/controller/checkout/cart.php
+CODE: $data['totals'] = array();
+LINE: 232
+
+FILE: catalog/view/theme/default/template/checkout/cart.tpl
+CODE: <?php if ($success) { ?>
+LINE: 32
+
+FILE: catalog/controller/checkout/checkout.php
+CODE: $data['shipping_required'] = $this->cart->hasShipping();
+LINE: 93
+
+FILE: catalog/view/theme/default/template/checkout/checkout.tpl
+CODE: <?php echo $content_top; ?>
+LINE: 28
+CODE: $total = $this->currency->format($unit_price * $product['quantity'], $this->session->data['currency']);
+LINE: 129
+
+FILE: catalog/controller/common/cart.php
+CODE: $total = $this->currency->format($unit_price * $product['quantity'], $this->session->data['currency']);
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/checkout/confirm.php
+CODE: $data['products'][] = array(
+LINE: 393
+CODE: 'total'      => $this->currency->format($this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax')) * $product['quantity'], $this->session->data['currency']),
+LINE: 403
+
+FILE: catalog/controller/product/product.php
+CODE: $data['points'] = $product_info['points'];
+LINE: 301
+
+FILE: catalog/view/theme/default/template/product/product.tpl
+CODE: <li class="active"><a href="#tab-description" data-toggle="tab"><?php echo $tab_description; ?></a></li>
+LINE: 50
+CODE: <div class="tab-pane active" id="tab-description"><?php echo $description; ?></div>
+LINE: 64
+
+FILE: catalog/view/theme/pav_ministore/template/product/product.tpl
+CODE: <li class="active"><a href="#tab-description" data-toggle="tab"><?php echo $tab_description; ?></a></li>
+NOT FOUND - OPERATIONS ABORTED!
+CODE: <ul class="nav nav-tabs">
+LINE: 53
+CODE: <ul class="nav nav-tabs">
+NOT FOUND - OPERATIONS ABORTED!
+----------------------------------------------------------------
+MOD: Sales Combination 1 : Buy x get y
+CODE: public function getWeight() {
+LINE: 459
+CODE: $this->sortcombination();
+LINE: 300
+LINE: 307
+LINE: 313
+
+FILE: catalog/model/extension/total/salescombo.php
+CODE: return $availableoffers;
+LINE: 40
+CODE: public function getAvailableOffers($product_id) {
+LINE: 67
+----------------------------------------------------------------
+MOD: Sales Combination 1b : Buy x get y
+CODE: public function getWeight() {
+LINE: 524
+CODE: $this->sortcombination();
+LINE: 300
+LINE: 308
+LINE: 315
+CODE: return $availableoffers;
+LINE: 72
+CODE: public function getAvailableOffers($product_id) {
+LINE: 100
+----------------------------------------------------------------
+MOD: Sales Combination 1c : Product Same Options Offer
+CODE: public function getWeight() {
+LINE: 651
+CODE: $this->sortcombination();
+LINE: 300
+LINE: 309
+LINE: 317
+CODE: return $availableoffers;
+LINE: 106
+CODE: public function getAvailableOffers($product_id) {
+LINE: 135
+----------------------------------------------------------------
+MOD: Sales Combination 1 : Buy x get y
+CODE: public function getWeight() {
+LINE: 713
+CODE: $this->sortcombination();
+LINE: 300
+LINE: 310
+LINE: 319
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "order_product WHERE order_id = '" . (int)$order_id . "'");
+LINE: 74
+CODE: return $availableoffers;
+LINE: 142
+CODE: public function getAvailableOffers($product_id) {
+LINE: 166
+
+FILE: admin/model/catalog/salescombopge.php
+CODE: public function createTable() {
+LINE: 315
+----------------------------------------------------------------
+MOD: Buy x and get y from category
+CODE: public function getWeight() {
+LINE: 819
+CODE: $this->sortcombination();
+LINE: 300
+LINE: 311
+LINE: 321
+----------------------------------------------------------------
+MOD: Sales Combination 2 : Buy x from category get y
+CODE: public function getWeight() {
+LINE: 898
+CODE: $this->sortcombination();
+LINE: 300
+LINE: 312
+LINE: 323
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "order_product WHERE order_id = '" . (int)$order_id . "'");
+LINE: 78
+CODE: public function createTable() {
+LINE: 315
+----------------------------------------------------------------
+MOD: d_opencart_patch
+
+FILE: admin/controller/extension/extension/dashboard.php
+CODE: 'dashboard_' . $this->request->get['extension']
+LINE: 18
+LINE: 40
+CODE: $this->load->controller('extension/dashboard/' . $this->request->get['extension'] . '/uninstall');
+LINE: 48
+CODE: $this->model_extension_extension->uninstall('dashboard', $value);
+LINE: 94
+
+FILE: admin/controller/event/compatibility.php
+CODE: $route = $part[1] . '/' . $part[2];
+LINE: 9
+LINE: 20
+
+FILE: admin/controller/extension/extension/feed.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/feed/' . $this->request->get['extension']);
+LINE: 28
+
+FILE: admin/controller/extension/extension/fraud.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/fraud/' . $this->request->get['extension']);
+LINE: 28
+
+FILE: admin/controller/extension/extension/module.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/module/' . $this->request->get['extension']);
+LINE: 32
+CODE: $data['extensions'][] = array(
+LINE: 166
+
+FILE: admin/controller/extension/extension/payment.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/payment/' . $this->request->get['extension']);
+LINE: 28
+
+FILE: admin/controller/extension/extension/shipping.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/shipping/' . $this->request->get['extension']);
+LINE: 28
+
+FILE: admin/controller/extension/extension/theme.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/theme/' . $this->request->get['extension']);
+LINE: 29
+
+FILE: admin/controller/extension/extension/total.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/total/' . $this->request->get['extension']);
+LINE: 29
+
+FILE: catalog/controller/event/compatibility.php
+CODE: $route = $part[1] . '/' . $part[2];
+LINE: 27
+LINE: 37
+LINE: 55
+
+FILE: system/library/cart/user.php
+CODE: return in_array($value, $this->permission[$key]);
+LINE: 72
+
+FILE: system/config/catalog.php
+CODE: $_['action_event'] = array(
+LINE: 49
+CODE: class ControllerEventCompatibility extends Controller {
+LINE: 5
+CODE: public function view(&$route, &$data) {
+LINE: 40
+
+FILE: admin/model/localisation/language.php
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "banner_image_description WHERE language_id = '" . (int)$language_id . "'");
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: admin/view/template/extension/extension/analytics.tpl
+CODE: <?php } ?>
+LINE: 32
+CODE: <?php } else { ?>
+LINE: 48
+
+FILE: admin/controller/user/user_permission.php
+CODE: $permission = substr($controller, 0, strrpos($controller, '.'));
+LINE: 373
+----------------------------------------------------------------
+MOD: Installation without FTP settings
+
+FILE: admin/controller/extension/installer.php
+CODE: $data['button_continue'] =
+LINE: 37
+CODE: 'extension/installer/ftp'
+LINE: 136
+CODE: function ftp(
+LINE: 301
+CODE: if (!$this->config->get('config_ftp_status')
+LINE: 319
+
+FILE: admin/language/en-gb/extension/installer.php
+CODE: $_['text_clear']
+LINE: 17
+
+FILE: admin/view/template/extension/installer.tpl
+CODE: <form class="form
+LINE: 34
+CODE: timer = setInterval(
+LINE: 87
+CODE: n next()
+LINE: 156
+CODE: 'path=' + data.path
+LINE: 167
+----------------------------------------------------------------
+MOD: Offer Pages Creator: Customized Html, Messages, Popup, Pages
+
+FILE: admin/language/arabi/common/menu.php
+CODE: $_['text_category']
+LINE: 12
+
+FILE: catalog/controller/common/header.php
+CODE: if (isset($this->request->get['route'])) {
+LINE: 196
+CODE: $data['base'] = $server;
+LINE: 50
+
+FILE: admin/controller/common/column_left.php
+CODE: if ($catalog) {
+LINE: 195
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: $_['text_zone']
+LINE: 86
+
+FILE: catalog/controller/product/category.php
+CODE: $data['categories'] = array();
+LINE: 172
+
+FILE: catalog/view/theme/default/template/product/category.tpl
+CODE: <?php if ($categories) { ?>
+LINE: 40
+CODE: <?php echo $footer; ?>
+LINE: 184
+CODE: <?php echo $footer; ?>
+LINE: 207
+
+FILE: catalog/view/theme/pav_ministore/template/product/category.tpl
+CODE: <?php if ($categories) { ?>
+NOT FOUND - OPERATIONS ABORTED!
+CODE: $data['discounts'] = array();
+LINE: 343
+CODE: <?php if ($price) { ?>
+LINE: 167
+CODE: <?php echo $footer; ?>
+LINE: 638
+CODE: <?php echo $footer; ?>
+LINE: 661
+CODE: <?php if ($price) { ?>
+LINE: 93
+CODE: <?php echo $footer; ?>
+LINE: 762
+CODE: <?php echo $footer; ?>
+LINE: 785
+
+FILE: catalog/controller/account/account.php
+CODE: $data['text_newsletter'] = $this->language->get('text_newsletter');
+LINE: 61
+
+FILE: catalog/view/theme/default/template/account/account.tpl
+CODE: <h2><?php echo $text_my_newsletter; ?></h2>
+LINE: 64
+
+FILE: catalog/controller/common/column_left.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 33
+
+FILE: catalog/controller/common/column_right.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 33
+
+FILE: catalog/controller/common/content_bottom.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 33
+
+FILE: catalog/controller/common/content_top.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 33
+
+FILE: catalog/controller/startup/seo_url.php
+CODE: if ($url[0] == 'manufacturer_id') {
+LINE: 41
+CODE: $this->request->get['route'] = $query->row['query'];
+LINE: 50
+CODE: } elseif (isset($this->request->get['manufacturer_id'])) {
+LINE: 72
+CODE: } elseif ($key == 'path') {
+LINE: 110
+----------------------------------------------------------------
+2017-11-22 14:40:17 - MOD: Modification Default
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+FILE: system/library/template/twig.php
+NOT FOUND!
+----------------------------------------------------------------
+MOD: comrooles
+FILE: system/library/cart/cart.php
+CODE: $this->db->query("UPDATE " . DB_PREFIX . "cart SET quantity = (quantity + " . (int)$quantity . ") WHERE api_id = '" . (isset($this->session->data['api_id']) ? (int)$this->session->data['api_id'] : 0) . "' AND customer_id = '" . (int)$this->customer->getId() . "' AND session_id = '" . $this->db->escape($this->session->getId()) . "' AND product_id = '" . (int)$product_id . "' AND recurring_id = '" . (int)$recurring_id . "' AND `option` = '" . $this->db->escape(json_encode($option)) . "'");
+LINE: 278
+CODE: public function getWeight() {
+LINE: 378
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "cart WHERE cart_id = '" . (int)$cart_id . "' AND api_id = '" . (isset($this->session->data['api_id']) ? (int)$this->session->data['api_id'] : 0) . "' AND customer_id = '" . (int)$this->customer->getId() . "' AND session_id = '" . $this->db->escape($this->session->getId()) . "'");
+LINE: 288
+CODE: $this->db->query("UPDATE " . DB_PREFIX . "cart SET quantity = '" . (int)$quantity . "' WHERE cart_id = '" . (int)$cart_id . "' AND api_id = '" . (isset($this->session->data['api_id']) ? (int)$this->session->data['api_id'] : 0) . "' AND customer_id = '" . (int)$this->customer->getId() . "' AND session_id = '" . $this->db->escape($this->session->getId()) . "'");
+LINE: 284
+CODE: $this->weight = $registry->get('weight');
+LINE: 14
+CODE: $product_data[] = array(
+LINE: 241
+CODE: if ($product['tax_class_id']) {
+LINE: 411
+CODE: $total += $this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax')) * $product['quantity'];
+LINE: 432
+CODE: $product_id =  $cart['product_id'];
+LINE: 321
+CODE: $download_data = array();
+LINE: 219
+FILE: catalog/model/checkout/order.php
+CODE: $order_id = $this->db->getLastId();
+LINE: 21
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "order_product WHERE order_id = '" . (int)$order_id . "'");
+LINE: 84
+FILE: catalog/controller/checkout/cart.php
+CODE: $data['totals'] = array();
+LINE: 232
+FILE: catalog/view/theme/default/template/checkout/cart.tpl
+CODE: <?php if ($success) { ?>
+LINE: 32
+FILE: catalog/controller/checkout/checkout.php
+CODE: $data['shipping_required'] = $this->cart->hasShipping();
+LINE: 93
+FILE: catalog/view/theme/default/template/checkout/checkout.tpl
+CODE: <?php echo $content_top; ?>
+LINE: 28
+CODE: $total = $this->currency->format($unit_price * $product['quantity'], $this->session->data['currency']);
+LINE: 129
+FILE: catalog/controller/common/cart.php
+CODE: $total = $this->currency->format($unit_price * $product['quantity'], $this->session->data['currency']);
+NOT FOUND!
+FILE: catalog/controller/checkout/confirm.php
+CODE: $data['products'][] = array(
+LINE: 393
+CODE: 'total'      => $this->currency->format($this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax')) * $product['quantity'], $this->session->data['currency']),
+LINE: 403
+FILE: catalog/controller/product/product.php
+CODE: $data['points'] = $product_info['points'];
+LINE: 301
+FILE: catalog/view/theme/default/template/product/product.tpl
+CODE: <li class="active"><a href="#tab-description" data-toggle="tab"><?php echo $tab_description; ?></a></li>
+LINE: 50
+CODE: <div class="tab-pane active" id="tab-description"><?php echo $description; ?></div>
+LINE: 64
+FILE: catalog/view/theme/pav_ministore/template/product/product.tpl
+CODE: <li class="active"><a href="#tab-description" data-toggle="tab"><?php echo $tab_description; ?></a></li>
+NOT FOUND!
+CODE: <ul class="nav nav-tabs">
+LINE: 53
+CODE: <ul class="nav nav-tabs">
+NOT FOUND!
+----------------------------------------------------------------
+MOD: Sales Combination 1 : Buy x get y
+CODE: public function getWeight() {
+LINE: 459
+CODE: $this->sortcombination();
+LINE: 300
+LINE: 307
+LINE: 313
+FILE: catalog/model/extension/total/salescombo.php
+CODE: return $availableoffers;
+LINE: 40
+CODE: public function getAvailableOffers($product_id) {
+LINE: 67
+----------------------------------------------------------------
+MOD: Sales Combination 1b : Buy x get y
+CODE: public function getWeight() {
+LINE: 524
+CODE: $this->sortcombination();
+LINE: 300
+LINE: 308
+LINE: 315
+CODE: return $availableoffers;
+LINE: 72
+CODE: public function getAvailableOffers($product_id) {
+LINE: 100
+----------------------------------------------------------------
+MOD: Sales Combination 1c : Product Same Options Offer
+CODE: public function getWeight() {
+LINE: 651
+CODE: $this->sortcombination();
+LINE: 300
+LINE: 309
+LINE: 317
+CODE: return $availableoffers;
+LINE: 106
+CODE: public function getAvailableOffers($product_id) {
+LINE: 135
+----------------------------------------------------------------
+MOD: Sales Combination 1 : Buy x get y
+CODE: public function getWeight() {
+LINE: 713
+CODE: $this->sortcombination();
+LINE: 300
+LINE: 310
+LINE: 319
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "order_product WHERE order_id = '" . (int)$order_id . "'");
+LINE: 74
+CODE: return $availableoffers;
+LINE: 142
+CODE: public function getAvailableOffers($product_id) {
+LINE: 166
+FILE: admin/model/catalog/salescombopge.php
+CODE: public function createTable() {
+LINE: 315
+----------------------------------------------------------------
+MOD: Buy x and get y from category
+CODE: public function getWeight() {
+LINE: 819
+CODE: $this->sortcombination();
+LINE: 300
+LINE: 311
+LINE: 321
+----------------------------------------------------------------
+MOD: Sales Combination 2 : Buy x from category get y
+CODE: public function getWeight() {
+LINE: 898
+CODE: $this->sortcombination();
+LINE: 300
+LINE: 312
+LINE: 323
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "order_product WHERE order_id = '" . (int)$order_id . "'");
+LINE: 78
+CODE: public function createTable() {
+LINE: 315
+----------------------------------------------------------------
+MOD: d_opencart_patch
+FILE: admin/controller/extension/extension/dashboard.php
+CODE: 'dashboard_' . $this->request->get['extension']
+LINE: 18
+LINE: 40
+CODE: $this->load->controller('extension/dashboard/' . $this->request->get['extension'] . '/uninstall');
+LINE: 48
+CODE: $this->model_extension_extension->uninstall('dashboard', $value);
+LINE: 94
+FILE: admin/controller/event/compatibility.php
+CODE: $route = $part[1] . '/' . $part[2];
+LINE: 9
+LINE: 20
+FILE: admin/controller/extension/extension/feed.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/feed/' . $this->request->get['extension']);
+LINE: 28
+FILE: admin/controller/extension/extension/fraud.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/fraud/' . $this->request->get['extension']);
+LINE: 28
+FILE: admin/controller/extension/extension/module.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/module/' . $this->request->get['extension']);
+LINE: 32
+CODE: $data['extensions'][] = array(
+LINE: 166
+FILE: admin/controller/extension/extension/payment.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/payment/' . $this->request->get['extension']);
+LINE: 28
+FILE: admin/controller/extension/extension/shipping.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/shipping/' . $this->request->get['extension']);
+LINE: 28
+FILE: admin/controller/extension/extension/theme.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/theme/' . $this->request->get['extension']);
+LINE: 29
+FILE: admin/controller/extension/extension/total.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/total/' . $this->request->get['extension']);
+LINE: 29
+FILE: catalog/controller/event/compatibility.php
+CODE: $route = $part[1] . '/' . $part[2];
+LINE: 27
+LINE: 37
+LINE: 55
+FILE: system/library/cart/user.php
+CODE: return in_array($value, $this->permission[$key]);
+LINE: 72
+FILE: system/config/catalog.php
+CODE: $_['action_event'] = array(
+LINE: 49
+CODE: class ControllerEventCompatibility extends Controller {
+LINE: 5
+CODE: public function view(&$route, &$data) {
+LINE: 40
+FILE: admin/model/localisation/language.php
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "banner_image_description WHERE language_id = '" . (int)$language_id . "'");
+NOT FOUND!
+FILE: admin/view/template/extension/extension/analytics.tpl
+CODE: <?php } ?>
+LINE: 32
+CODE: <?php } else { ?>
+LINE: 48
+FILE: admin/controller/user/user_permission.php
+CODE: $permission = substr($controller, 0, strrpos($controller, '.'));
+LINE: 373
+----------------------------------------------------------------
+MOD: d_social_login
+FILE: admin/model/customer/customer.php
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "customer WHERE customer_id = '" . (int)$customer_id . "'");
+LINE: 58
+----------------------------------------------------------------
+MOD: Installation without FTP settings
+FILE: admin/controller/extension/installer.php
+CODE: $data['button_continue'] =
+LINE: 37
+CODE: 'extension/installer/ftp'
+LINE: 136
+CODE: function ftp(
+LINE: 301
+CODE: if (!$this->config->get('config_ftp_status')
+LINE: 319
+FILE: admin/language/en-gb/extension/installer.php
+CODE: $_['text_clear']
+LINE: 17
+FILE: admin/view/template/extension/installer.tpl
+CODE: <form class="form
+LINE: 34
+CODE: timer = setInterval(
+LINE: 87
+CODE: n next()
+LINE: 156
+CODE: 'path=' + data.path
+LINE: 167
+----------------------------------------------------------------
+MOD: Offer Pages Creator: Customized Html, Messages, Popup, Pages
+FILE: admin/language/arabi/common/menu.php
+CODE: $_['text_category']
+LINE: 12
+FILE: catalog/controller/common/header.php
+CODE: if (isset($this->request->get['route'])) {
+LINE: 196
+CODE: $data['base'] = $server;
+LINE: 50
+FILE: admin/controller/common/column_left.php
+CODE: if ($catalog) {
+LINE: 195
+FILE: admin/language/en-gb/common/column_left.php
+CODE: $_['text_zone']
+LINE: 86
+FILE: catalog/controller/product/category.php
+CODE: $data['categories'] = array();
+LINE: 172
+FILE: catalog/view/theme/default/template/product/category.tpl
+CODE: <?php if ($categories) { ?>
+LINE: 40
+CODE: <?php echo $footer; ?>
+LINE: 184
+CODE: <?php echo $footer; ?>
+LINE: 207
+FILE: catalog/view/theme/pav_ministore/template/product/category.tpl
+CODE: <?php if ($categories) { ?>
+NOT FOUND!
+CODE: $data['discounts'] = array();
+LINE: 343
+CODE: <?php if ($price) { ?>
+LINE: 167
+CODE: <?php echo $footer; ?>
+LINE: 638
+CODE: <?php echo $footer; ?>
+LINE: 661
+CODE: <?php if ($price) { ?>
+LINE: 93
+CODE: <?php echo $footer; ?>
+LINE: 762
+CODE: <?php echo $footer; ?>
+LINE: 785
+FILE: catalog/controller/account/account.php
+CODE: $data['text_newsletter'] = $this->language->get('text_newsletter');
+LINE: 61
+FILE: catalog/view/theme/default/template/account/account.tpl
+CODE: <h2><?php echo $text_my_newsletter; ?></h2>
+LINE: 64
+FILE: catalog/controller/common/column_left.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 33
+FILE: catalog/controller/common/column_right.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 33
+FILE: catalog/controller/common/content_bottom.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 33
+FILE: catalog/controller/common/content_top.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 33
+FILE: catalog/controller/startup/seo_url.php
+CODE: if ($url[0] == 'manufacturer_id') {
+LINE: 41
+CODE: $this->request->get['route'] = $query->row['query'];
+LINE: 50
+CODE: } elseif (isset($this->request->get['manufacturer_id'])) {
+LINE: 72
+CODE: } elseif ($key == 'path') {
+LINE: 110
+----------------------------------------------------------------
+2017-11-22 14:40:18 - MOD: Modification Default
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+FILE: system/library/template/twig.php
+NOT FOUND!
+----------------------------------------------------------------
+MOD: comrooles
+FILE: system/library/cart/cart.php
+CODE: $this->db->query("UPDATE " . DB_PREFIX . "cart SET quantity = (quantity + " . (int)$quantity . ") WHERE api_id = '" . (isset($this->session->data['api_id']) ? (int)$this->session->data['api_id'] : 0) . "' AND customer_id = '" . (int)$this->customer->getId() . "' AND session_id = '" . $this->db->escape($this->session->getId()) . "' AND product_id = '" . (int)$product_id . "' AND recurring_id = '" . (int)$recurring_id . "' AND `option` = '" . $this->db->escape(json_encode($option)) . "'");
+LINE: 278
+CODE: public function getWeight() {
+LINE: 378
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "cart WHERE cart_id = '" . (int)$cart_id . "' AND api_id = '" . (isset($this->session->data['api_id']) ? (int)$this->session->data['api_id'] : 0) . "' AND customer_id = '" . (int)$this->customer->getId() . "' AND session_id = '" . $this->db->escape($this->session->getId()) . "'");
+LINE: 288
+CODE: $this->db->query("UPDATE " . DB_PREFIX . "cart SET quantity = '" . (int)$quantity . "' WHERE cart_id = '" . (int)$cart_id . "' AND api_id = '" . (isset($this->session->data['api_id']) ? (int)$this->session->data['api_id'] : 0) . "' AND customer_id = '" . (int)$this->customer->getId() . "' AND session_id = '" . $this->db->escape($this->session->getId()) . "'");
+LINE: 284
+CODE: $this->weight = $registry->get('weight');
+LINE: 14
+CODE: $product_data[] = array(
+LINE: 241
+CODE: if ($product['tax_class_id']) {
+LINE: 411
+CODE: $total += $this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax')) * $product['quantity'];
+LINE: 432
+CODE: $product_id =  $cart['product_id'];
+LINE: 321
+CODE: $download_data = array();
+LINE: 219
+FILE: catalog/model/checkout/order.php
+CODE: $order_id = $this->db->getLastId();
+LINE: 21
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "order_product WHERE order_id = '" . (int)$order_id . "'");
+LINE: 84
+FILE: catalog/controller/checkout/cart.php
+CODE: $data['totals'] = array();
+LINE: 232
+FILE: catalog/view/theme/default/template/checkout/cart.tpl
+CODE: <?php if ($success) { ?>
+LINE: 32
+FILE: catalog/controller/checkout/checkout.php
+CODE: $data['shipping_required'] = $this->cart->hasShipping();
+LINE: 93
+FILE: catalog/view/theme/default/template/checkout/checkout.tpl
+CODE: <?php echo $content_top; ?>
+LINE: 28
+CODE: $total = $this->currency->format($unit_price * $product['quantity'], $this->session->data['currency']);
+LINE: 129
+FILE: catalog/controller/common/cart.php
+CODE: $total = $this->currency->format($unit_price * $product['quantity'], $this->session->data['currency']);
+NOT FOUND!
+FILE: catalog/controller/checkout/confirm.php
+CODE: $data['products'][] = array(
+LINE: 393
+CODE: 'total'      => $this->currency->format($this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax')) * $product['quantity'], $this->session->data['currency']),
+LINE: 403
+FILE: catalog/controller/product/product.php
+CODE: $data['points'] = $product_info['points'];
+LINE: 301
+FILE: catalog/view/theme/default/template/product/product.tpl
+CODE: <li class="active"><a href="#tab-description" data-toggle="tab"><?php echo $tab_description; ?></a></li>
+LINE: 50
+CODE: <div class="tab-pane active" id="tab-description"><?php echo $description; ?></div>
+LINE: 64
+FILE: catalog/view/theme/pav_ministore/template/product/product.tpl
+CODE: <li class="active"><a href="#tab-description" data-toggle="tab"><?php echo $tab_description; ?></a></li>
+NOT FOUND!
+CODE: <ul class="nav nav-tabs">
+LINE: 53
+CODE: <ul class="nav nav-tabs">
+NOT FOUND!
+----------------------------------------------------------------
+MOD: Sales Combination 1 : Buy x get y
+CODE: public function getWeight() {
+LINE: 459
+CODE: $this->sortcombination();
+LINE: 300
+LINE: 307
+LINE: 313
+FILE: catalog/model/extension/total/salescombo.php
+CODE: return $availableoffers;
+LINE: 40
+CODE: public function getAvailableOffers($product_id) {
+LINE: 67
+----------------------------------------------------------------
+MOD: Sales Combination 1b : Buy x get y
+CODE: public function getWeight() {
+LINE: 524
+CODE: $this->sortcombination();
+LINE: 300
+LINE: 308
+LINE: 315
+CODE: return $availableoffers;
+LINE: 72
+CODE: public function getAvailableOffers($product_id) {
+LINE: 100
+----------------------------------------------------------------
+MOD: Sales Combination 1c : Product Same Options Offer
+CODE: public function getWeight() {
+LINE: 651
+CODE: $this->sortcombination();
+LINE: 300
+LINE: 309
+LINE: 317
+CODE: return $availableoffers;
+LINE: 106
+CODE: public function getAvailableOffers($product_id) {
+LINE: 135
+----------------------------------------------------------------
+MOD: Sales Combination 1 : Buy x get y
+CODE: public function getWeight() {
+LINE: 713
+CODE: $this->sortcombination();
+LINE: 300
+LINE: 310
+LINE: 319
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "order_product WHERE order_id = '" . (int)$order_id . "'");
+LINE: 74
+CODE: return $availableoffers;
+LINE: 142
+CODE: public function getAvailableOffers($product_id) {
+LINE: 166
+FILE: admin/model/catalog/salescombopge.php
+CODE: public function createTable() {
+LINE: 315
+----------------------------------------------------------------
+MOD: Buy x and get y from category
+CODE: public function getWeight() {
+LINE: 819
+CODE: $this->sortcombination();
+LINE: 300
+LINE: 311
+LINE: 321
+----------------------------------------------------------------
+MOD: Sales Combination 2 : Buy x from category get y
+CODE: public function getWeight() {
+LINE: 898
+CODE: $this->sortcombination();
+LINE: 300
+LINE: 312
+LINE: 323
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "order_product WHERE order_id = '" . (int)$order_id . "'");
+LINE: 78
+CODE: public function createTable() {
+LINE: 315
+----------------------------------------------------------------
+MOD: d_opencart_patch
+FILE: admin/controller/extension/extension/dashboard.php
+CODE: 'dashboard_' . $this->request->get['extension']
+LINE: 18
+LINE: 40
+CODE: $this->load->controller('extension/dashboard/' . $this->request->get['extension'] . '/uninstall');
+LINE: 48
+CODE: $this->model_extension_extension->uninstall('dashboard', $value);
+LINE: 94
+FILE: admin/controller/event/compatibility.php
+CODE: $route = $part[1] . '/' . $part[2];
+LINE: 9
+LINE: 20
+FILE: admin/controller/extension/extension/feed.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/feed/' . $this->request->get['extension']);
+LINE: 28
+FILE: admin/controller/extension/extension/fraud.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/fraud/' . $this->request->get['extension']);
+LINE: 28
+FILE: admin/controller/extension/extension/module.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/module/' . $this->request->get['extension']);
+LINE: 32
+CODE: $data['extensions'][] = array(
+LINE: 166
+FILE: admin/controller/extension/extension/payment.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/payment/' . $this->request->get['extension']);
+LINE: 28
+FILE: admin/controller/extension/extension/shipping.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/shipping/' . $this->request->get['extension']);
+LINE: 28
+FILE: admin/controller/extension/extension/theme.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/theme/' . $this->request->get['extension']);
+LINE: 29
+FILE: admin/controller/extension/extension/total.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/total/' . $this->request->get['extension']);
+LINE: 29
+FILE: catalog/controller/event/compatibility.php
+CODE: $route = $part[1] . '/' . $part[2];
+LINE: 27
+LINE: 37
+LINE: 55
+FILE: system/library/cart/user.php
+CODE: return in_array($value, $this->permission[$key]);
+LINE: 72
+FILE: system/config/catalog.php
+CODE: $_['action_event'] = array(
+LINE: 49
+CODE: class ControllerEventCompatibility extends Controller {
+LINE: 5
+CODE: public function view(&$route, &$data) {
+LINE: 40
+FILE: admin/model/localisation/language.php
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "banner_image_description WHERE language_id = '" . (int)$language_id . "'");
+NOT FOUND!
+FILE: admin/view/template/extension/extension/analytics.tpl
+CODE: <?php } ?>
+LINE: 32
+CODE: <?php } else { ?>
+LINE: 48
+FILE: admin/controller/user/user_permission.php
+CODE: $permission = substr($controller, 0, strrpos($controller, '.'));
+LINE: 373
+----------------------------------------------------------------
+MOD: d_social_login
+FILE: admin/model/customer/customer.php
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "customer WHERE customer_id = '" . (int)$customer_id . "'");
+LINE: 58
+----------------------------------------------------------------
+MOD: d_twig_manager
+CODE: $file = DIR_TEMPLATE . $template;
+NOT FOUND!
+CODE: $output = $template->render($route . '.tpl'
+LINE: 92
+----------------------------------------------------------------
+MOD: Installation without FTP settings
+FILE: admin/controller/extension/installer.php
+CODE: $data['button_continue'] =
+LINE: 37
+CODE: 'extension/installer/ftp'
+LINE: 136
+CODE: function ftp(
+LINE: 301
+CODE: if (!$this->config->get('config_ftp_status')
+LINE: 319
+FILE: admin/language/en-gb/extension/installer.php
+CODE: $_['text_clear']
+LINE: 17
+FILE: admin/view/template/extension/installer.tpl
+CODE: <form class="form
+LINE: 34
+CODE: timer = setInterval(
+LINE: 87
+CODE: n next()
+LINE: 156
+CODE: 'path=' + data.path
+LINE: 167
+----------------------------------------------------------------
+MOD: Offer Pages Creator: Customized Html, Messages, Popup, Pages
+FILE: admin/language/arabi/common/menu.php
+CODE: $_['text_category']
+LINE: 12
+FILE: catalog/controller/common/header.php
+CODE: if (isset($this->request->get['route'])) {
+LINE: 196
+CODE: $data['base'] = $server;
+LINE: 50
+FILE: admin/controller/common/column_left.php
+CODE: if ($catalog) {
+LINE: 195
+FILE: admin/language/en-gb/common/column_left.php
+CODE: $_['text_zone']
+LINE: 86
+FILE: catalog/controller/product/category.php
+CODE: $data['categories'] = array();
+LINE: 172
+FILE: catalog/view/theme/default/template/product/category.tpl
+CODE: <?php if ($categories) { ?>
+LINE: 40
+CODE: <?php echo $footer; ?>
+LINE: 184
+CODE: <?php echo $footer; ?>
+LINE: 207
+FILE: catalog/view/theme/pav_ministore/template/product/category.tpl
+CODE: <?php if ($categories) { ?>
+NOT FOUND!
+CODE: $data['discounts'] = array();
+LINE: 343
+CODE: <?php if ($price) { ?>
+LINE: 167
+CODE: <?php echo $footer; ?>
+LINE: 638
+CODE: <?php echo $footer; ?>
+LINE: 661
+CODE: <?php if ($price) { ?>
+LINE: 93
+CODE: <?php echo $footer; ?>
+LINE: 762
+CODE: <?php echo $footer; ?>
+LINE: 785
+FILE: catalog/controller/account/account.php
+CODE: $data['text_newsletter'] = $this->language->get('text_newsletter');
+LINE: 61
+FILE: catalog/view/theme/default/template/account/account.tpl
+CODE: <h2><?php echo $text_my_newsletter; ?></h2>
+LINE: 64
+FILE: catalog/controller/common/column_left.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 33
+FILE: catalog/controller/common/column_right.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 33
+FILE: catalog/controller/common/content_bottom.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 33
+FILE: catalog/controller/common/content_top.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 33
+FILE: catalog/controller/startup/seo_url.php
+CODE: if ($url[0] == 'manufacturer_id') {
+LINE: 41
+CODE: $this->request->get['route'] = $query->row['query'];
+LINE: 50
+CODE: } elseif (isset($this->request->get['manufacturer_id'])) {
+LINE: 72
+CODE: } elseif ($key == 'path') {
+LINE: 110
+----------------------------------------------------------------

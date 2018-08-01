@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+  <name>Offer Pages Creator: Customized Html, Messages, Popup, Pages</name>
+  <code>sacompge</code>
+  <version>10.1</version>
+  <author>CartBinder</author>
+  <link>https://www.cartbinder.com/store</link>
+    <file path="admin/controller/common/menu.php">
+    <operation>
+      <search><![CDATA[$data['text_category']]]></search>
+      <add position="before"><![CDATA[$data['text_salescombopge'] = $this->language->get('text_salescombopge');]]>
+      </add>
+    </operation>
+    <operation><search><![CDATA[$data['category']]]></search>
+      <add position="before"><![CDATA[$data['salescombopge'] = $this->url->link('catalog/salescombopge', 'token=' . $this->session->data['token'], 'SSL');]]>
+      </add>
+    </operation>
+  </file>
+  <file path="admin/language/*/common/menu.php">
+    <operation>
+      <search><![CDATA[
+        $_['text_category']
+        ]]>
+      </search>
+      <add position="before">
+        <![CDATA[
+        $_['text_salescombopge']      = 'Offer Pages Creator';
+        ]]>
+      </add>
+    </operation>
+  </file>
+  <file path="admin/view/template/common/menu.tpl">
+    <operation>
+      <search><![CDATA[<li><a href="<?php echo $information; ?>"><?php echo $text_information; ?></a></li>]]>
+      </search>
+      <add position="after"><![CDATA[
+        <li><a href="<?php echo $salescombopge; ?>"><?php echo $text_salescombopge; ?></a></li>
+        ]]>
+      </add>
+    </operation>
+  </file>
+
+  <file path="catalog/controller/common/header.php">
+    <operation>
+      <search><![CDATA[if (isset($this->request->get['route'])) {]]>
+      </search>
+      <add position="before"><![CDATA[
+        $this->load->language('offers/salescombopge');
+        $data['text_salescombopge_heading'] = $this->language->get('text_salescombopge_heading');
+        $data['salescombopge_info'] = array();
+        $this->load->model('offers/salescombopge');
+        $salescombopge_info = $this->model_offers_salescombopge->getPages();
+        foreach ($salescombopge_info as $key => $value) {
+         if($value['top']) {
+          $data['salescombopge_info'][] = array(
+            'name'=> $value['title'],
+            'href' => $this->url->link('offers/salescombopge', 'page_id=' .  $value['salescombopge_id']),
+            'id' => "",
+            'children_level2' => array()
+          );
+         } 
+        }
+        if(!empty($data['salescombopge_info'])) {
+          $data['categories'][] = array(
+            'name'     => $data['text_salescombopge_heading'],
+            'children' => $data['salescombopge_info'],
+            'column'   => 1,
+            'href'     => $this->url->link("offers/alloffers")
+          );
+        }
+
+        ]]>
+      </add>
+    </operation>
+    <operation>
+      <search><![CDATA[$data['base'] = $server;]]></search>
+      <add position="after"><![CDATA[$this->document->addStyle('catalog/view/theme/default/stylesheet/slsoffr.css');]]></add>
+    </operation>
+  </file>
+    <file path="admin/controller/common/column_left.php">
+    <operation>
+      <search><![CDATA[if ($catalog) {]]></search>
+      <add position="before"><![CDATA[
+
+        if ($this->user->hasPermission('access', 'catalog/salescombopge')) {
+          $catalog[] = array(
+            'name'     => $this->language->get('text_salescombopge'),
+            'href'     => $this->url->link('catalog/salescombopge', 'token=' . $this->session->data['token'], true),
+            'children' => array()   
+          );
+        }
+        
+        ]]></add>
+    </operation>
+  </file>
+  <file path="admin/language/*/common/column_left.php">
+    <operation>
+      <search><![CDATA[
+        $_['text_zone']
+        ]]>
+      </search>
+      <add position="before">
+        <![CDATA[
+        $_['text_salescombopge']      = 'Offer Pages Creator';
+        ]]>
+      </add>
+    </operation>
+  </file>
+
+   <file path="catalog/controller/product/category.php">
+    <operation>
+      <search><![CDATA[$data['categories'] = array();]]>
+      </search>
+      <add position="before"><![CDATA[
+        $this->load->language('offers/salescombopge');
+        $data['text_categorypage_knowmore'] = $this->language->get('text_categorypage_knowmore');
+        $data['text_categorypage_clickhere'] = $this->language->get('text_categorypage_clickhere');
+        $data['offerclose'] = $this->language->get('offerclose');
+        $data['text_categorypage_products'] = $this->language->get('text_categorypage_products');
+        $data['text_categorypage_isavailable'] = $this->language->get('text_categorypage_isavailable');
+        $this->load->model('offers/salescombopge');
+        $data['salescombopgeoffers'] = $this->model_offers_salescombopge->getOfferByCategoryId($category_id);
+        ]]>
+      </add>
+    </operation>
+  </file>
+
+  <file path="catalog/view/theme/*/template/product/category.tpl">
+    <operation>
+      <search><![CDATA[<?php if ($categories) { ?>]]>
+      </search>
+      <add position="before"><![CDATA[
+       <?php if ($salescombopgeoffers) {  foreach($salescombopgeoffers as $offer) { echo html_entity_decode($offer['html']); } } ?>
+        ]]>
+      </add>
+    </operation>
+    <operation>
+      <search><![CDATA[<?php echo $footer; ?>]]>
+      </search>
+      <add position="before"><![CDATA[
+         <div id="offerPopup" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title"></h4>
+      </div>
+      <div class="modal-body">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-dismiss="modal"><?php echo $offerclose; ?></button>
+      </div>
+    </div>
+
+  </div>
+</div>
+         ]]>
+      </add>
+    </operation>
+    <operation>
+      <search><![CDATA[<?php echo $footer; ?>]]>
+      </search>
+      <add position="before"><![CDATA[
+         <script type="text/javascript">
+  function openOfferPopup(id) {
+      $.ajax({
+      url: 'index.php?route=offers/salescombopge/popp',
+      type: 'post',
+      dataType: 'json',
+      data: {"page_id" : id} ,
+      success: function(json) {
+        if(json.html != undefined) {
+          if(json.html.title != undefined) {
+            $('#offerPopup .modal-title').html(json.html.title);
+          }
+          if(json.html.description != undefined) {
+            $('#offerPopup .modal-body').html(json.html.description);
+          }
+          $('#offerPopup').modal('show'); 
+        } 
+      }
+    });
+  }
+</script>
+         ]]>
+      </add>
+    </operation>
+  </file>
+  <file path="catalog/controller/product/product.php">
+    <operation>
+      <search><![CDATA[$data['discounts'] = array();]]>
+      </search>
+      <add position="before"><![CDATA[
+        $this->load->language('offers/salescombopge');
+        $data['text_productpage_knowmore'] = $this->language->get('text_productpage_knowmore');
+        $data['text_productpage_clickhere'] = $this->language->get('text_productpage_clickhere');
+        $data['offerclose'] = $this->language->get('offerclose');
+        $data['text_productpage_isavailable'] = $this->language->get('text_productpage_isavailable');
+        $this->load->model('offers/salescombopge');
+        $data['salescombopgeoffers'] = $this->model_offers_salescombopge->getOfferByProductId($product_id);
+        ]]>
+      </add>
+    </operation>
+  </file>
+
+  <file path="catalog/view/theme/*/template/product/product.tpl">
+    <operation>
+      <search><![CDATA[<?php if ($price) { ?>]]>
+      </search>
+      <add position="before"><![CDATA[
+       <?php if ($salescombopgeoffers) {  foreach($salescombopgeoffers as $offer) { echo html_entity_decode($offer['html']); } } ?>
+        ]]>
+      </add>
+    </operation>
+    <operation>
+      <search><![CDATA[<?php echo $footer; ?>]]>
+      </search>
+      <add position="before"><![CDATA[
+         <div id="offerPopup" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title"></h4>
+      </div>
+      <div class="modal-body">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-dismiss="modal"><?php echo $offerclose; ?></button>
+      </div>
+    </div>
+
+  </div>
+</div>
+         ]]>
+      </add>
+    </operation>
+    <operation>
+      <search><![CDATA[<?php echo $footer; ?>]]>
+      </search>
+      <add position="before"><![CDATA[
+         <script type="text/javascript">
+  function openOfferPopup(id) {
+      $.ajax({
+      url: 'index.php?route=offers/salescombopge/popp',
+      type: 'post',
+      dataType: 'json',
+      data: {"page_id" : id} ,
+      success: function(json) {
+        if(json.html != undefined) {
+          if(json.html.title != undefined) {
+            $('#offerPopup .modal-title').html(json.html.title);
+          }
+          if(json.html.description != undefined) {
+            $('#offerPopup .modal-body').html(json.html.description);
+          }
+          $('#offerPopup').modal('show'); 
+        } 
+      }
+    });
+  }
+</script>
+         ]]>
+      </add>
+    </operation>
+  </file>
+
+   <file path="catalog/controller/account/account.php">
+    <operation>
+      <search><![CDATA[$data['text_newsletter'] = $this->language->get('text_newsletter');]]>
+      </search>
+      <add position="after"><![CDATA[
+        $this->load->language('offers/salescombopge');
+        $data['text_salescombopge_heading'] = $this->language->get('text_salescombopge_heading_accountpage');
+        $data['salescombopge_info'] = array();
+        $this->load->model('offers/salescombopge');
+        $salescombopge_info = $this->model_offers_salescombopge->getPages();
+        foreach ($salescombopge_info as $key => $value) {
+          $data['salescombopge_info'][] = array(
+            'name'=> $value['title'],
+            'href' => $this->url->link('offers/salescombopge', 'page_id=' .  $value['salescombopge_id'])
+          );
+        }
+        ]]>
+      </add>
+    </operation>
+  </file>
+
+   <file path="catalog/view/theme/*/template/account/account.tpl">
+    <operation>
+      <search><![CDATA[
+       <h2><?php echo $text_my_newsletter; ?></h2>
+        ]]>
+      </search>
+      <add position="before"><![CDATA[
+       <?php if(!empty($salescombopge_info)) { ?>
+       <h2><?php echo $text_salescombopge_heading; ?></h2>
+        <ul class="list-unstyled">
+         <?php foreach ($salescombopge_info as $key => $value) { ?>
+          <li><a href="<?php echo $value['href']; ?>"><?php echo $value['name']; ?></a></li>
+         <?php } ?>
+        </ul>
+      <?php } ?>
+        ]]>
+      </add>
+    </operation>
+  </file>
+   <file path="catalog/controller/module/account.php">
+    <operation>
+      <search><![CDATA[
+        $data['newsletter'] = $this->url->link('account/newsletter', '', 'SSL');
+        ]]>
+      </search>
+      <add position="before"><![CDATA[
+        $this->load->language('offers/salescombopge');
+        $data['text_salescombopge_heading'] = $this->language->get('text_salescombopge_heading');
+        $data['salescombopge_info'] = array();
+        $this->load->model('offers/salescombopge');
+        $salescombopge_info = $this->model_offers_salescombopge->getPages();
+        foreach ($salescombopge_info as $key => $value) {
+          $data['salescombopge_info'][] = array(
+            'name'=> $value['title'],
+            'href' => $this->url->link('offers/salescombopge', 'page_id=' .  $value['salescombopge_id'])
+          );
+        }
+        ]]>
+      </add>
+    </operation>
+  </file>
+   <file path="catalog/view/theme/*/template/module/account.tpl">
+    <operation>
+      <search><![CDATA[
+    <a href="<?php echo $logout; ?>" class="list-group-item"><?php echo $text_logout; ?></a>
+        ]]>
+      </search>
+      <add position="before"><![CDATA[
+        <?php } ?>
+        <?php if(!empty($salescombopge_info)) { ?>
+         <?php foreach ($salescombopge_info as $key => $value) { ?>
+        <a href="<?php echo $value['href']; ?>" class="list-group-item"><?php echo $value['name']; ?></a>
+         <?php } ?>
+      <?php } ?>
+      <?php if ($logged) { ?>
+        ]]>
+      </add>
+    </operation>
+  </file>
+
+  <file path="catalog/controller/common/column_left.php">
+    <operation>
+      <search><![CDATA[if ($route == 'information/information' && isset($this->request->get['information_id'])) {]]>
+      </search>
+      <add position="before"><![CDATA[
+        if ($route == 'offers/salescombopge' && isset($this->request->get['page_id'])) {
+          $this->load->model('offers/salescombopge');
+          $layout_id = $this->model_offers_salescombopge->getPageLayoutId($this->request->get['page_id']);
+        }
+        ]]>
+      </add>
+    </operation>
+  </file>
+
+  <file path="catalog/controller/common/column_right.php">
+    <operation>
+      <search><![CDATA[if ($route == 'information/information' && isset($this->request->get['information_id'])) {]]>
+      </search>
+      <add position="before"><![CDATA[
+        if ($route == 'offers/salescombopge' && isset($this->request->get['page_id'])) {
+          $this->load->model('offers/salescombopge');
+          $layout_id = $this->model_offers_salescombopge->getPageLayoutId($this->request->get['page_id']);
+        }
+        ]]>
+      </add>
+    </operation>
+  </file>
+
+  <file path="catalog/controller/common/content_bottom.php">
+    <operation>
+      <search><![CDATA[if ($route == 'information/information' && isset($this->request->get['information_id'])) {]]>
+      </search>
+      <add position="before"><![CDATA[
+        if ($route == 'offers/salescombopge' && isset($this->request->get['page_id'])) {
+          $this->load->model('offers/salescombopge');
+          $layout_id = $this->model_offers_salescombopge->getPageLayoutId($this->request->get['page_id']);
+        }
+        ]]>
+      </add>
+    </operation>
+  </file>
+
+  <file path="catalog/controller/common/content_top.php">
+    <operation>
+      <search><![CDATA[if ($route == 'information/information' && isset($this->request->get['information_id'])) {]]>
+      </search>
+      <add position="before"><![CDATA[
+        if ($route == 'offers/salescombopge' && isset($this->request->get['page_id'])) {
+          $this->load->model('offers/salescombopge');
+          $layout_id = $this->model_offers_salescombopge->getPageLayoutId($this->request->get['page_id']);
+        }
+        ]]>
+      </add>
+    </operation>
+  </file>
+
+
+   <file path="catalog/controller/common/seo_url.php">
+    <operation>
+      <search><![CDATA[if ($url[0] == 'manufacturer_id') {]]>
+      </search>
+      <add position="before"><![CDATA[
+        if ($url[0] == 'salescombopge_id') {
+            $this->request->get['salescombopge_id'] = $url[1];
+            $this->request->get['page_id'] = $url[1];
+          }
+        ]]>
+      </add>
+    </operation>
+     <operation>
+      <search><![CDATA[$this->request->get['route'] = $query->row['query'];]]>
+      </search>
+      <add position="replace"><![CDATA[
+        if($url[0] != 'salescombopge_id') {
+          $this->request->get['route'] = $query->row['query'];
+        }
+        ]]>
+      </add>
+    </operation>
+    <operation>
+      <search><![CDATA[} elseif (isset($this->request->get['manufacturer_id'])) {]]>
+      </search>
+      <add position="before"><![CDATA[
+       } elseif (isset($this->request->get['salescombopge_id'])) {
+          $this->request->get['route'] = 'offers/salescombopge';
+        ]]>
+      </add>
+    </operation>
+    <operation>
+      <search><![CDATA[} elseif ($key == 'path') {]]>
+      </search>
+      <add position="before"><![CDATA[
+     } else if ($data['route'] == 'offers/salescombopge' && $key == 'page_id') {
+          $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "url_alias WHERE `query` = 'salescombopge_id=" . (int)$value . "'");
+
+          if ($query->num_rows && $query->row['keyword']) {
+            $url .= '/' . $query->row['keyword'];
+
+            unset($data[$key]);
+          }
+        ]]>
+      </add>
+    </operation>
+  </file>
+
+  <file path="catalog/controller/startup/seo_url.php">
+    <operation>
+      <search><![CDATA[if ($url[0] == 'manufacturer_id') {]]>
+      </search>
+      <add position="before"><![CDATA[
+        if ($url[0] == 'salescombopge_id') {
+            $this->request->get['salescombopge_id'] = $url[1];
+            $this->request->get['page_id'] = $url[1];
+          }
+        ]]>
+      </add>
+    </operation>
+     <operation>
+      <search><![CDATA[$this->request->get['route'] = $query->row['query'];]]>
+      </search>
+      <add position="replace"><![CDATA[
+        if($url[0] != 'salescombopge_id') {
+          $this->request->get['route'] = $query->row['query'];
+        }
+        ]]>
+      </add>
+    </operation>
+    <operation>
+      <search><![CDATA[} elseif (isset($this->request->get['manufacturer_id'])) {]]>
+      </search>
+      <add position="before"><![CDATA[
+       } elseif (isset($this->request->get['salescombopge_id'])) {
+          $this->request->get['route'] = 'offers/salescombopge';
+        ]]>
+      </add>
+    </operation>
+    <operation>
+      <search><![CDATA[} elseif ($key == 'path') {]]>
+      </search>
+      <add position="before"><![CDATA[
+     } else if ($data['route'] == 'offers/salescombopge' && $key == 'page_id') {
+          $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "url_alias WHERE `query` = 'salescombopge_id=" . (int)$value . "'");
+
+          if ($query->num_rows && $query->row['keyword']) {
+            $url .= '/' . $query->row['keyword'];
+
+            unset($data[$key]);
+          }
+        ]]>
+      </add>
+    </operation>
+  </file>
+  
+</modification>

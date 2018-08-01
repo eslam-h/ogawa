@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+  <name>Sales Combination 1 : Buy x get y</name>
+  <code>sc1buyxgyz</code>
+  <version>4.1</version>
+  <author>cartbinder.com</author>
+  <link>http://store.cartbinder.com</link>
+  <file path="system/library/cart/cart.php">
+    <operation>
+      <search><![CDATA[public function getWeight() {]]>
+      </search><add position="before"><![CDATA[
+      public function salesonecombo1(){if(isset($this->session->data['slscmdprdts']) && !empty($this->session->data['slscmdprdts'])){
+        //$this->log->write("wholesaleconditionexists");$this->log->write(print_r($this->session->data['slscmdprdts'],true));
+          $query = $this->db->query("SELECT  * FROM " . DB_PREFIX . "cartbindercombo1_setting WHERE status = '1'");foreach($query->rows as $step => $destination) {$primaryarray = explode(",",$destination['primarypids']);$secondaryarray = explode(",",$destination['secondarypids']);
+           //$this->log->write("primaryarray");$this->log->write(print_r($primaryarray,true));$this->log->write("secondaryarray");$this->log->write(print_r($secondaryarray,true));
+            if($this->checkCg($destination['cids'])) {continue;}
+            foreach($primaryarray as $key => $value){if(!array_key_exists($value,$this->session->data['slscmdprdts'])) {
+               //$this->log->write("break from primary");
+               continue 2;
+            }}
+            //$this->log->write("offer should come");
+            $totalprimaryquantity = array();foreach($primaryarray as $pids) {$totalprimaryquantity[] = $this->session->data['slscmdprdts'][$pids];}$commonseocndaryquantity = min($totalprimaryquantity);
+            //$this->log->write("common quantity".$commonseocndaryquantity);
+            $netquantity = floor(($commonseocndaryquantity * $destination['secondaryquant'])/$destination['primaryquant']);
+            //$netquantity = $commonseocndaryquantity;
+            //$this->log->write("net quantity".$netquantity);
+            $i = 0;if($netquantity > 0) {$i = 1;}
+            $version = str_replace(".","",VERSION);$spprtsimproopt = array();$temp  = $netquantity;$quantityapply = $temp;
+            if($version > 2100) {
+              $cart_query = $this->db->query("SELECT c.cart_id,c.product_id,c.quantity FROM " . DB_PREFIX . "cart c LEFT JOIN " . DB_PREFIX . "product p ON (p.product_id = c.product_id) WHERE c.customer_id = '" . (int)$this->customer->getId() . "' AND c.session_id = '" . $this->db->escape($this->session->getId()) . "' ORDER BY p.price ASC");
+              foreach ($cart_query->rows as $cart) {
+               if(!isset($this->session->data['cartbindercombooffers'][$cart['cart_id']])) {
+                $product_id = $cart['product_id'];
+                if(in_array($product_id,$secondaryarray) && ($quantityapply > 0)) {
+                 $temp = $quantityapply;$quantityapply = $quantityapply - $cart['quantity'];
+                 $i = 0; $this->session->data['cartbindercombooffers_offerapplied'][] = $destination['sales_offer_id'];
+                 // $this->log->write("Quantity apply : ".$quantityapply."Temp : ".$temp);
+                  $this->session->data['cartbindercombooffers'][$cart['cart_id']] = $destination;if($quantityapply >= 0) {$this->session->data['cartbindercombooffers'][$cart['cart_id']]['quantity'] = $cart['quantity'];} else {$this->session->data['cartbindercombooffers'][$cart['cart_id']]['quantity'] = $temp;} if($quantityapply <= 0) {break;}
+                  //$this->log->write("offer on product id ".$product_id);$this->log->write(print_r($this->session->data['cartbindercombooffers'],true));
+                  }
+                }
+              }
+            } else {
+              foreach ($this->session->data['cart'] as $key => $quantity) {
+                if(!isset($this->session->data['cartbindercombooffers'][$key])) {
+                  $product = unserialize(base64_decode($key));$product_id = $product['product_id'];
+                  if(in_array($product_id,$secondaryarray) && ($quantityapply > 0)) {
+                    $temp = $quantityapply;$quantityapply = $quantityapply - $quantity;
+                    $i = 0;
+                     $this->session->data['cartbindercombooffers_offerapplied'][] = $destination['sales_offer_id'];
+                    //$this->log->write("Quantity apply : ".$quantityapply."Temp : ".$temp);
+                    $this->session->data['cartbindercombooffers'][$key] =  $destination;
+                    if($quantityapply >= 0) {
+                      $this->session->data['cartbindercombooffers'][$key]['quantity'] = $quantity;
+                      } else {
+                    $this->session->data['cartbindercombooffers'][$key]['quantity'] = $temp;
+                    } if($quantityapply <= 0) {break;}
+                    //$this->log->write("offer on product id ".$product_id);$this->log->write(print_r($this->session->data['cartbindercombooffers'],true));
+                 }}}}if($i){$this->session->data['cartbindercombooffers_pages'][] = $destination['sales_offer_id'];}}}}]]></add>
+    </operation>
+    <operation>
+      <search><![CDATA[$this->sortcombination();]]>
+      </search><add position="after"><![CDATA[$this->salesonecombo1();]]>
+      </add>
+    </operation>
+  </file>
+    <file path="catalog/model/checkout/order.php">
+    <operation>
+      <search><![CDATA[$this->db->query("DELETE FROM " . DB_PREFIX . "order_product WHERE order_id = '" . (int)$order_id . "'");]]>
+      </search><add position="before"><![CDATA[
+       $this->db->query("DELETE FROM " . DB_PREFIX . "cartbindercombo1 WHERE order_id = '" . (int)$order_id . "'");
+      $this->db->query("DELETE FROM " . DB_PREFIX . "cartbindercombo1a WHERE order_id = '" . (int)$order_id . "'");
+      $this->db->query("DELETE FROM " . DB_PREFIX . "cartbindercombo1b WHERE order_id = '" . (int)$order_id . "'");
+      $this->db->query("DELETE FROM " . DB_PREFIX . "cartbindercombo1c WHERE order_id = '" . (int)$order_id . "'");
+      ]]>
+      </add>
+    </operation>
+  </file>
+  <file path="catalog/model/total/salescombo.php">
+    <operation>
+      <search><![CDATA[return $availableoffers;]]>
+      </search>
+      <add position="before"><![CDATA[$availableoffers['notab'] .= $this->combo1($product_id);$availableoffers['tab'] .= $this->combo1tab($product_id);]]>
+      </add>
+    </operation>
+    <operation>
+      <search><![CDATA[public function getAvailableOffers($product_id) {]]>
+      </search>
+      <add position="before"><![CDATA[
+        public function combo1($product_id) {
+    $this->load->language('total/salescombo');
+    $data['addqty'] = $this->language->get('addqty');
+    $data['getqty'] = $this->language->get('getqty');
+    $data['offertag'] = $this->language->get('offertag');
+    $data['button_bundle'] = $this->language->get('button_bundle');
+    $data['offers'] = array();
+    $query = $this->db->query("SELECT  * FROM " . DB_PREFIX . "cartbindercombo1_setting WHERE status = '1' AND showoffer = '1' AND FIND_IN_SET('".$product_id."',`primarypids`)>0 AND displaylocation = 0");
+    foreach ($query->rows as $key => $value) {
+      if($this->checkCg($value['cids'])) {continue;}
+      $data['offers'] = $this->generateOffer($value);
+    }
+    
+    return $this->load->view('module/salescombo', $data);
+  }
+
+  public function combo1tab($product_id) {
+    $this->load->language('total/salescombo');
+    $data['addqty'] = $this->language->get('addqty');
+    $data['getqty'] = $this->language->get('getqty');
+    $data['offertag'] = $this->language->get('offertag');
+    $data['button_bundle'] = $this->language->get('button_bundle');
+    $data['offers'] = array();
+    $query = $this->db->query("SELECT  * FROM " . DB_PREFIX . "cartbindercombo1_setting WHERE status = '1' AND showoffer = '1' AND FIND_IN_SET('".$product_id."',`primarypids`)>0 AND displaylocation = 1");
+    foreach ($query->rows as $key => $value) {
+      if($this->checkCg($value['cids'])) {continue;}
+      $data['offers'] = $this->generateOffer($value);
+    }
+    
+    return $this->load->view('module/salescombo', $data);
+  }
+        ]]>
+      </add>
+    </operation>
+  </file>
+  <file path="admin/model/catalog/salescombopge.php">
+    <operation>
+      <search><![CDATA[public function createTable() {]]>
+      </search>
+      <add position="after"><![CDATA[
+        $this->load->model('tool/cartbindercombo1');
+    $this->model_tool_cartbindercombo1->createTable();
+        ]]>
+      </add>
+    </operation>
+  </file>
+</modification>
